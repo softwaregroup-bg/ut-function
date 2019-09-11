@@ -1,6 +1,6 @@
 {
   "name": "ut-function.flatten",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Flatten nested properties",
   "repository": {
     "type": "git",
