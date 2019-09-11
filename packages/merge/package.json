@@ -1,0 +1,16 @@
+{
+  "name": "ut-function.merge",
+  "version": "1.0.0",
+  "dependencies": {
+    "lodash.mergewith": "4.6.2"
+  },
+  "devDependencies": {
+    "ut-tools": "^6.24.0"
+  },
+  "description": "Advanced merge handler",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}
