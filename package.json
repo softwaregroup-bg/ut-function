@@ -2,6 +2,7 @@
   "name": "ut-function",
   "devDependencies": {
     "lerna": "3.16.4",
+    "tap": "13.1.1",
     "ut-tools": "^6.24.0"
   },
   "scripts": {
