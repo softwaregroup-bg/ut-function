@@ -1,6 +1,7 @@
 {
   "name": "ut-function",
   "devDependencies": {
+    "lerna": "3.16.4",
     "ut-tools": "^6.24.0"
   },
   "scripts": {
