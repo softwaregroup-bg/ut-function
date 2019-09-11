@@ -1,5 +1,6 @@
 {
   "name": "ut-function",
+  "private": true,
   "devDependencies": {
     "lerna": "3.16.4",
     "tap": "^14.6.2",
