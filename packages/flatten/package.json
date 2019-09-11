@@ -1,7 +1,6 @@
 {
   "name": "ut-function.flatten",
-  "version": "1.0.0",
-  "dependencies": {},
+  "version": "1.0.1",
   "devDependencies": {
     "ut-tools": "^6.24.0"
   },
