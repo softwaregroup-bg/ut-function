@@ -1,6 +1,6 @@
 {
   "name": "ut-function.template",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "devDependencies": {
     "tap": "13.1.1",
     "ut-tools": "^6.24.0"
