@@ -1,11 +1,12 @@
 const vm = require('vm');
 
 module.exports = function template(templateString, templateVariables, ut = {}) {
+    const array = Array.isArray(templateVariables);
     const [keys, values] = Object.entries(templateVariables).reduce((prev, cur) => {
-        let name = cur[0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
+        let name = cur[array ? 1 : 0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
         if (!prev[0].includes(name)) { // skip duplicates
             prev[0].push(name);
-            prev[1].push(cur[1]);
+            if (!array) prev[1].push(cur[1]);
         }
         return prev;
     }, [['ut'], [ut]]);
@@ -15,5 +16,5 @@ module.exports = function template(templateString, templateVariables, ut = {}) {
     } else {
         templateFunction = new Function(...keys, `return \`${templateString}\`;`); // eslint-disable-line
     }
-    return templateFunction(...values);
+    return array ? (...params) => templateFunction(ut, ...params) : templateFunction(...values);
 };
