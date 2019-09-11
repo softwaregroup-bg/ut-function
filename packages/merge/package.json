@@ -4,9 +4,6 @@
   "dependencies": {
     "lodash.mergewith": "4.6.2"
   },
-  "devDependencies": {
-    "ut-tools": "^6.24.0"
-  },
   "description": "Advanced merge handler",
   "repository": {
     "type": "git",
