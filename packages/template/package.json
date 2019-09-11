@@ -1,6 +1,6 @@
 {
   "name": "ut-function.template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Fast template engine",
   "devDependencies": {
     "tap": "^14.6.2"
