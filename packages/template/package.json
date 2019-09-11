@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
+    "tap": "13.1.1",
     "ut-tools": "^6.24.0"
   },
   "description": "Fast template engine",
