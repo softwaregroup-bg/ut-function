@@ -1,29 +1,26 @@
 {
-  "name": "ut-function.includes",
-  "version": "1.0.0",
-  "dependencies": {},
+  "name": "ut-function",
   "devDependencies": {
-    "ut-tools": "^5.15.0"
+    "ut-tools": "^6.24.0"
   },
-  "description": "UT utility function",
   "scripts": {
     "lint": "ut-lint .",
-    "release": "ut-release",
+    "release": "ut-release-lerna",
     "changelog": "ut-changelog",
     "check": "ut-check",
-    "cover": "ut-cover",
+    "cover": "ut-cover-parallel",
+    "gitlab": "ut-gitlab",
+    "jenkins": "ut-jenkins",
     "lint-js": "ut-lint-js .",
-    "postpublish": "ut-postpublish",
     "postversion": "ut-postversion",
     "precommit": "ut-precommit",
+    "precover": "ut-precover",
     "prepublish": "ut-prepublish",
     "prepush": "ut-prepush",
     "pretest": "ut-pretest",
     "preversion": "ut-preversion",
-    "test": "ut-test",
-    "version": "ut-version",
-    "jenkins": "ut-jenkins",
-    "gitlab": "ut-gitlab"
+    "test": "ut-test-parallel",
+    "version": "ut-version"
   },
   "repository": {
     "type": "git",

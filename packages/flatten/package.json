@@ -1,0 +1,14 @@
+{
+  "name": "ut-function.flatten",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "ut-tools": "^6.24.0"
+  },
+  "description": "Flatten nested properties",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}

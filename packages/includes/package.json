@@ -1,0 +1,14 @@
+{
+  "name": "ut-function.includes",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "ut-tools": "^6.24.0"
+  },
+  "description": "Test array of strings",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}

@@ -13,6 +13,12 @@ module.exports = function includes(where, strings) {
                 return strings.find(value => where[value]);
             }
         case 'string':
+            switch (where) {
+                case 'true':
+                    return true;
+                case 'false':
+                    return false;
+            }
             return strings.includes(where);
     };
     return false;
