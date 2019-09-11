@@ -5,6 +5,14 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`packages/template/index.test.js TAP render > template with variable and function 1`] = `
+exports[`packages/template/index.test.js TAP render > immediate template with variable and function (epoch) 1`] = `
+UTC time: Thu, 01 Jan 1970 00:00:00 GMT
+`
+
+exports[`packages/template/index.test.js TAP render > template rendering with variable and function (epoch + 1 second) 1`] = `
+UTC time: Thu, 01 Jan 1970 00:00:01 GMT
+`
+
+exports[`packages/template/index.test.js TAP render > template rendering with variable and function (epoch) 1`] = `
 UTC time: Thu, 01 Jan 1970 00:00:00 GMT
 `
