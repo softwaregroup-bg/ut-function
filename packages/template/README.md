@@ -10,9 +10,9 @@ Parameters:
 
 * `string`: Template to render
 * `params`: Pass one of:
-    `object`: Template is evaluated, properties of the passed object are
+    * `object`: Template is evaluated, properties of the passed object are
     available as variables in the template, using ${...} expressions
-    `array`: Template rendering function is returned, with arguments
+    * `array`: Template rendering function is returned, with arguments
     named after the strings in tha passed array.
 * `ut`: object, exposed as a global variable named ut,
   which can be accessed inside ${...} expressions. It is
