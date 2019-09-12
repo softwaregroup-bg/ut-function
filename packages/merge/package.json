@@ -1,6 +1,6 @@
 {
   "name": "ut.merge",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "dependencies": {
     "lodash.mergewith": "4.6.2"
   },
