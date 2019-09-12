@@ -1,7 +1,7 @@
 {
-  "name": "ut.template",
+  "name": "ut-function.template",
   "version": "1.2.0",
-  "description": "Fast template engine",
+  "description": "Fast and tiny template engine",
   "devDependencies": {
     "tap": "^14.6.2"
   },

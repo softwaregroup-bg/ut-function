@@ -1,6 +1,6 @@
 # ut-function.template
 
-Fast template engine
+Fast and tiny template engine
 
 ## Usage
 
@@ -34,7 +34,7 @@ const templateString = 'UTC time: ${ut.format(time)}';
 template(templateString, {time: 0}, {format});
 // => UTC time: Thu, 01 Jan 1970 00:00:00 GMT
 
-const time = template(templateString', ['time'], {format});
+const time = template(templateString, ['time'], {format});
 time(0);
 // => UTC time: Thu, 01 Jan 1970 00:00:00 GMT
 

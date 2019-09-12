@@ -1,5 +1,5 @@
 {
-  "name": "ut.flatten",
+  "name": "ut-function.flatten",
   "version": "1.1.0",
   "description": "Flatten nested properties",
   "repository": {
