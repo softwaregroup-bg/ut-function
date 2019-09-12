@@ -1,5 +1,5 @@
 {
-  "name": "ut-function.template",
+  "name": "ut.template",
   "version": "1.1.1",
   "description": "Fast template engine",
   "devDependencies": {
