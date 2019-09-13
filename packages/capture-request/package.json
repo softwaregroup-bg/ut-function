@@ -1,0 +1,16 @@
+{
+    "name": "ut-function.capture-request",
+    "version": "1.0.0",
+    "dependencies": {
+        "through2": "2.0.3"
+    },
+    "devDependencies": {
+        "tap": "^14.6.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:softwaregroup-bg/ut-function.git"
+    },
+    "license": "Apache-2.0"
+}
+
