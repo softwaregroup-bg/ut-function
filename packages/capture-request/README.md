@@ -3,5 +3,6 @@
 Usage
 
 ```js
-const request = require('ut-function.capture-request')(require('request'), {name: 'send'});
+const captureRequest = require('ut-function.capture-request');
+const request = captureRequest(require('request'), {name: 'send'});
 ```
