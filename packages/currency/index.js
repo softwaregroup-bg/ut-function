@@ -737,9 +737,9 @@ module.exports = function currency({errors} = {}) {
         numeric: numeric,
         alphabetic: alphabetic,
         scale: getScaleIns,
-        cents: (currency, cents, sign = 1) => amountObjectIns(cents, getScale(currency), sign, currency, cents),
+        cents: (currency, cents, sign = 1) => amountObjectIns(cents, getScaleIns(currency), sign, currency, cents),
         amount: function(currency, amount, sign = 1) {
-            var scale = getScale(currency);
+            var scale = getScaleIns(currency);
             return amountObjectIns(roundCents(amount, scale), scale, sign, currency, amount);
         }
     };
