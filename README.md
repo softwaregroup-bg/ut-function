@@ -11,4 +11,4 @@ request/response recording wrapper for [request](https://www.npmjs.com/package/r
 * [ut-function.merge](./packages/merge) - Advanced merge handler
 * [ut-function.template](./packages/template) - Fast and tiny template engine
 * [ut-function.timezone](./packages/timezone) - Dynamic timezone formatter
-* [ut-function.currency](./packages/flatten) - Flatten nested properties
+* [ut-function.currency](./packages/currency) - Currency helper functions
