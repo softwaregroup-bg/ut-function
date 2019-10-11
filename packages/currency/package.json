@@ -1,0 +1,12 @@
+{
+    "name": "ut-function.currency",
+    "version": "0.0.1",
+    "devDependencies": {
+        "tap": "^14.6.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:softwaregroup-bg/ut-function.git"
+    },
+    "license": "Apache-2.0"
+}
