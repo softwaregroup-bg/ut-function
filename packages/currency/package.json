@@ -1,5 +1,6 @@
 {
     "name": "ut-function.currency",
+    "description": "Currency helper functions",
     "version": "0.0.1",
     "devDependencies": {
         "tap": "^14.6.2"
