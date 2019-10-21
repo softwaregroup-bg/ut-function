@@ -10,7 +10,7 @@ const deps = {
             throw new Error('.....');
         },
         'currency.invalidAmount': (args) => {
-            throw new Error('.....')
+            throw new Error('.....');
         }
     }
 };
