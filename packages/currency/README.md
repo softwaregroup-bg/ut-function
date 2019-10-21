@@ -6,11 +6,11 @@ Usage
 const curFun = require('ut-function.currency');
 const deps = {
     errors: {
-        invalidCurrency: (args) => {
+        'currency.invalidCurrency': (args) => {
             throw new Error('.....');
         },
-        invalidAmount: (args) => {
-            throw new Error('.....')
+        'currency.invalidAmount': (args) => {
+            throw new Error('.....');
         }
     }
 };
