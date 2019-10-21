@@ -684,7 +684,7 @@ function numeric(code) {
 var amountObject = (errors) => (cents, scale, sign, currency, string) => {
     var result = '00000' + cents;
     if (!Number.isInteger(parseInt(cents))) {
-        throw errors.invalidAmount({params: {amount: string, currency}});
+        throw errors['currency.invalidAmount']({params: {amount: string, currency}});
     } else if (scale > 0) {
         result = result.substr(0, result.length - scale) + '.' + result.slice(-scale);
     }
@@ -719,7 +719,7 @@ function roundCents(value, exp) { // based on function decimalAdjust in Mozilla 
 const getScale = (errors) => (code) => {
     var scale = SCALE[code];
     if (scale == null || scale > 4) {
-        throw errors.invalidCurrency({params: {currency: code}});
+        throw errors['currency.invalidCurrency']({params: {currency: code}});
     }
     return scale;
 };
@@ -727,7 +727,7 @@ const getScale = (errors) => (code) => {
 // argument 1 - deps
 
 module.exports = function currency({errors} = {}) {
-    if (!errors || !errors.invalidCurrency || !errors.invalidAmount) {
+    if (!errors || !errors['currency.invalidCurrency'] || !errors['currency.invalidAmount']) {
         throw new Error('Error definition missing');
     }
     let getScaleIns = getScale(errors);
