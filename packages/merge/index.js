@@ -1,26 +1,11 @@
 const mergeWith = require('lodash.mergewith');
-
-const isEqual = (x, y) => {
-    if (typeof x !== typeof y) return false;
-    if (typeof x === 'object') {
-        const xProps = Object.getOwnPropertyNames(x);
-        const yProps = Object.getOwnPropertyNames(y);
-        if (xProps.length !== yProps.length) return false;
-        for (let i = 0; i < xProps.length; i += 1) {
-            let prop = xProps[i];
-            if (!isEqual(x[prop], y[prop])) return false;
-        }
-        return true;
-    }
-    return x === y;
-};
-
+const equals = require('ut-function.equals');
 const mergeHandlers = {
     combine(targetVal, sourceVal) {
         return targetVal
             .concat(sourceVal)
             .filter((value, index, arr) => {
-                return value && arr.findIndex(x => isEqual(x, value)) === index;
+                return value && arr.findIndex(x => equals(x, value)) === index;
             });
     },
     override(targetVal, sourceVal) {
