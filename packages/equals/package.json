@@ -1,0 +1,10 @@
+{
+  "name": "ut-function.equals",
+  "version": "1.0.0",
+  "description": "Deep equality comparison between two values",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}
