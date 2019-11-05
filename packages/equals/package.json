@@ -1,6 +1,6 @@
 {
   "name": "ut-function.equals",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Deep equality comparison between two values",
   "repository": {
     "type": "git",
