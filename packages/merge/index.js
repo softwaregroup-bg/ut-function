@@ -25,7 +25,15 @@ const merge = (objects = [], {
     const getMergeHandler = fallbackStrategy => {
         if (!keepStack) return mergeHandlers[fallbackStrategy];
         const path = stack[stack.length - 1].path.join('.');
-        return mergeHandlers[mergeStrategies[path] || fallbackStrategy];
+        const mergeStrategy = mergeStrategies[path];
+        switch (typeof mergeStrategy) {
+            case 'function':
+                return mergeStrategy;
+            case 'string':
+                return mergeHandlers[mergeStrategy] || mergeHandlers[fallbackStrategy];
+            default:
+                return mergeHandlers[fallbackStrategy];
+        }
     };
 
     return mergeWith(...objects, (targetVal, sourceVal, key, target, source) => {
