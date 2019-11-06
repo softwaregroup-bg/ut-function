@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.merge@1.3.0...ut-function.merge@1.4.0) (2019-11-06)
+
+
+### Features
+
+* possibility to provide function as a merge handler ([a8cf31b](https://github.com/softwaregroup-bg/ut-function/commit/a8cf31b))
+
+
+
+
+
 # [1.3.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.currency@1.0.3...ut-function.merge@1.3.0) (2019-11-05)
 
 
