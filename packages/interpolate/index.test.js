@@ -152,13 +152,7 @@ const cases = [
         }
     }
 ];
-tap.comment('Examples:');
+
 cases.forEach(({message, what, params, inline, matcher, result}) => {
-    tap.comment(`
-        \`\`\`js
-            var result = interpolate(${JSON.stringify(what)}, ${JSON.stringify(params)}, ${inline}, ${matcher});
-            // result = ${JSON.stringify(interpolate(what, params, inline, matcher))}
-        \`\`\`
-    `);
     tap.same(interpolate(what, params, inline, matcher), result, message);
 });
