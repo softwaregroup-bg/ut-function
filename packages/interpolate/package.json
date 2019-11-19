@@ -1,0 +1,13 @@
+{
+  "name": "ut-function.interpolate",
+  "version": "1.0.0",
+  "description": "Interpolation function",
+  "dependencies": {
+    "dot-prop": "4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}

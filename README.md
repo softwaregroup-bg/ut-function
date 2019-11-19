@@ -10,6 +10,7 @@ request/response recording wrapper for [request](https://www.npmjs.com/package/r
 * [ut-function.equals](./packages/equals) - Deep equality comparison between two values
 * [ut-function.flatten](./packages/flatten) - Flatten nested properties
 * [ut-function.includes](./packages/includes) - Test array of strings
+* [ut-function.interpolate](./packages/interpolate) - Interpolation function
 * [ut-function.merge](./packages/merge) - Advanced merge handler
 * [ut-function.template](./packages/template) - Fast and tiny template engine
 * [ut-function.timezone](./packages/timezone) - Dynamic timezone formatter
