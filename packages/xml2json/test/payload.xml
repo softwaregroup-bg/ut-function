@@ -1,0 +1,11 @@
+<randomNameSpace:some xmlns:randomNameSpace="http://randomNameSpace.com">
+    <deep>
+        <nested>
+            <structure>value 1</structure>
+        </nested>
+    </deep>
+    <veryVeryLongTagName>value 2</veryVeryLongTagName>
+    <something>
+        <weDoNotCareAbout>value 3</weDoNotCareAbout>
+    </something>
+</randomNameSpace:some>

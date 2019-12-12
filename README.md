@@ -15,3 +15,4 @@ two values
 * [ut-function.merge](./packages/merge) - Advanced merge handler
 * [ut-function.template](./packages/template) - Fast and tiny template engine
 * [ut-function.timezone](./packages/timezone) - Dynamic timezone formatter
+* [ut-function.xml2json](./packages/xml2json) - Practical XML parsing
