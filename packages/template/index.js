@@ -21,6 +21,13 @@ const templateTags = {
         '<': '&lt;',
         '\'': '&apos;'
     }),
+    escapeHtml: getTemplateTag({
+        '&': '&amp;',
+        '"': '&quot;',
+        '>': '&gt;',
+        '<': '&lt;',
+        '\'': '&#39;'
+    }),
     escapeJson: getTemplateTag({
         '&': '\\&',
         '"': '\\"',
@@ -49,6 +56,9 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     switch (escape) {
         case 'xml':
             functionBody = `return ut.escapeXml\`${templateString}\`;`;
+            break;
+        case 'html':
+            functionBody = `return ut.escapeHtml\`${templateString}\`;`;
             break;
         case 'json':
             functionBody = `return ut.escapeJson\`${templateString}\`;`;
