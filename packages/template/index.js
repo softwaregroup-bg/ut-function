@@ -1,8 +1,11 @@
 const vm = require('vm');
 
-const getTemplateTag = escapeMap => {
+const getHandler = escapeMap => {
     const regExp = new RegExp('([' + Object.keys(escapeMap).join('') + '])', 'g');
-    const escape = str => str.replace(regExp, (str, x) => escapeMap[x]);
+    return str => str.replace(regExp, (str, x) => escapeMap[x]);
+};
+
+const getTag = escape => {
     return (strings, ...values) => {
         return Array
             .from({length: strings.length + values.length}, (v, i) => {
@@ -13,35 +16,32 @@ const getTemplateTag = escapeMap => {
     };
 };
 
-const templateTags = {
-    escapeXml: getTemplateTag({
+const handlers = {
+    escapeXml: getHandler({
         '&': '&amp;',
         '"': '&quot;',
         '>': '&gt;',
         '<': '&lt;',
         '\'': '&apos;'
     }),
-    escapeHtml: getTemplateTag({
+    escapeHtml: getHandler({
         '&': '&amp;',
         '"': '&quot;',
         '>': '&gt;',
         '<': '&lt;',
         '\'': '&#39;'
     }),
-    escapeJson: getTemplateTag({
-        '&': '\\&',
-        '"': '\\"',
-        '\'': '\\\'',
-        '\n': '\\n',
-        '\r': '\\r',
-        '\t': '\\t',
-        '\b': '\\b',
-        '\f': '\\f'
-    })
+    escapeJson: str => JSON.stringify(str).slice(1, -1)
+};
+
+const tags = {
+    escapeXml: getTag(handlers.escapeXml),
+    escapeHtml: getTag(handlers.escapeHtml),
+    escapeJson: getTag(handlers.escapeJson)
 };
 
 module.exports = function template(templateString, templateVariables, ut = {}, escape) {
-    Object.assign(ut, templateTags);
+    Object.assign(ut, handlers, {tags});
     const array = Array.isArray(templateVariables);
     const [keys, values] = Object.entries(templateVariables).reduce((prev, cur) => {
         let name = cur[array ? 1 : 0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
@@ -55,13 +55,13 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     let functionBody;
     switch (escape) {
         case 'xml':
-            functionBody = `return ut.escapeXml\`${templateString}\`;`;
+            functionBody = `return ut.tags.escapeXml\`${templateString}\`;`;
             break;
         case 'html':
-            functionBody = `return ut.escapeHtml\`${templateString}\`;`;
+            functionBody = `return ut.tags.escapeHtml\`${templateString}\`;`;
             break;
         case 'json':
-            functionBody = `return ut.escapeJson\`${templateString}\`;`;
+            functionBody = `return ut.tags.escapeJson\`${templateString}\`;`;
             break;
         default:
             functionBody = `return \`${templateString}\`;`;

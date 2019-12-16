@@ -27,6 +27,8 @@ tap.test('render', assert => {
     assert.matchSnapshot(timeXml(1000), 'xml template rendering with variable and function (epoch + 1 second)');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('<a>${b.c}</a>', ['b'], {}, 'xml')({c: '<d>&"><\'</d>'}), 'xml template rendering with malicious variable');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('<a>${ut.escapeXml(b.c)}</a>', ['b'], {})({c: '<d>&"><\'</d>'}), 'xml template rendering with built-in escape');
 
     // html
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatXml}, 'html'), 'immediate html template with variable and function (epoch)');
@@ -35,6 +37,8 @@ tap.test('render', assert => {
     assert.matchSnapshot(timeHtml(1000), 'html template rendering with variable and function (epoch + 1 second)');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('<a>${b.c}</a>', ['b'], {}, 'html')({c: '<d>&"><\'</d>'}), 'html template rendering with malicious variable');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('<a>${ut.escapeHtml(b.c)}</a>', ['b'], {})({c: '<d>&"><\'</d>'}), 'html template rendering with built-in escape');
 
     // json
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatJson}, 'json'), 'immediate json template with variable and function (epoch)');
@@ -43,6 +47,8 @@ tap.test('render', assert => {
     assert.matchSnapshot(timeJson(1000), 'json template rendering with variable and function (epoch + 1 second)');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"a": "${b.c}"}', ['b'], {}, 'json')({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with malicious variable');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('{"a": "${ut.escapeJson(b.c)}"}', ['b'], {})({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with built-in escape');
 
     assert.end();
 });
