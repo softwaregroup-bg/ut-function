@@ -23,12 +23,16 @@ tap.test('render', assert => {
     const timeJson = template(templateString, ['time'], {format: formatJson}, 'json');
     assert.matchSnapshot(timeJson(0), 'json template rendering with variable and function (epoch)');
     assert.matchSnapshot(timeJson(1000), 'json template rendering with variable and function (epoch + 1 second)');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('{"a": "${b.c}"}', ['b'], {}, 'json')({c: '{"d": "e"}'}), 'json template rendering with malicious variable');
 
     // xml
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatXml}, 'xml'), 'immediate xml template with variable and function (epoch)');
     const timeXml = template(templateString, ['time'], {format: formatXml}, 'xml');
     assert.matchSnapshot(timeXml(0), 'xml template rendering with variable and function (epoch)');
     assert.matchSnapshot(timeXml(1000), 'xml template rendering with variable and function (epoch + 1 second)');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('<a>${b.c}</a>', ['b'], {}, 'xml')({c: '<d></d>'}), 'xml template rendering with malicious variable');
 
     assert.end();
 });

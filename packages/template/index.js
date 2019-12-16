@@ -1,13 +1,27 @@
 const vm = require('vm');
-const escapeHandlers = [
-    ['xml', {
+
+const getTemplateTag = escapeMap => {
+    const regExp = new RegExp('([' + Object.keys(escapeMap).join('') + '])', 'g');
+    const escape = str => str.replace(regExp, (str, x) => escapeMap[x]);
+    return (strings, ...values) => {
+        return Array
+            .from({length: strings.length + values.length}, (v, i) => {
+                return i % 2 ? escape(values[(i - 1) / 2]) : strings[ i / 2 ];
+            })
+            .filter(Boolean)
+            .join('');
+    };
+};
+
+const templateTags = {
+    escapeXml: getTemplateTag({
         '&': '&amp;',
         '"': '&quot;',
         '>': '&gt;',
         '<': '&lt;',
         '\'': '&apos;'
-    }],
-    ['json', {
+    }),
+    escapeJson: getTemplateTag({
         '&': '\\&',
         '"': '\\"',
         '\'': '\\\'',
@@ -16,16 +30,11 @@ const escapeHandlers = [
         '\t': '\\t',
         '\b': '\\b',
         '\f': '\\f'
-    }]
-].reduce((all, [what, map]) => {
-    const r = new RegExp('([' + Object.keys(map).join('') + '])', 'g');
-    return {
-        ...all,
-        [what]: s => s.replace(r, (s, x) => map[x])
-    };
-}, {});
+    })
+};
 
 module.exports = function template(templateString, templateVariables, ut = {}, escape) {
+    Object.assign(ut, templateTags);
     const array = Array.isArray(templateVariables);
     const [keys, values] = Object.entries(templateVariables).reduce((prev, cur) => {
         let name = cur[array ? 1 : 0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
@@ -37,20 +46,17 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     }, [['ut'], [ut]]);
 
     let functionBody;
-    if (typeof escape === 'string') escape = escapeHandlers[escape];
-    if (typeof escape === 'function') {
-        ut._escape = (strings, ...values) => {
-            return Array
-                .from({length: strings.length + values.length}, (v, i) => {
-                    return i % 2 ? escape(values[(i - 1) / 2]) : strings[ i / 2 ];
-                })
-                .filter(Boolean)
-                .join('');
-        };
-        functionBody = `return ut._escape\`${templateString}\`;`;
-    } else {
-        functionBody = `return \`${templateString}\`;`;
-    };
+    switch (escape) {
+        case 'xml':
+            functionBody = `return ut.escapeXml\`${templateString}\`;`;
+            break;
+        case 'json':
+            functionBody = `return ut.escapeJson\`${templateString}\`;`;
+            break;
+        default:
+            functionBody = `return \`${templateString}\`;`;
+            break;
+    }
 
     let templateFunction;
     if (vm.compileFunction) {
