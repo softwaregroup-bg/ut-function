@@ -37,15 +37,15 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     }, [['ut'], [ut]]);
 
     let functionBody;
-    if (escapeHandlers[escape]) {
+    if (typeof escape === 'string') escape = escapeHandlers[escape];
+    if (typeof escape === 'function') {
         ut._escape = (strings, ...values) => {
-            const result = Array
+            return Array
                 .from({length: strings.length + values.length}, (v, i) => {
-                    return i % 2 ? values[(i - 1) / 2] : strings[ i / 2 ];
+                    return i % 2 ? escape(values[(i - 1) / 2]) : strings[ i / 2 ];
                 })
                 .filter(Boolean)
                 .join('');
-            return escapeHandlers[escape](result);
         };
         functionBody = `return ut._escape\`${templateString}\`;`;
     } else {
