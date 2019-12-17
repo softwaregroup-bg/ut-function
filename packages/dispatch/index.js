@@ -1,6 +1,7 @@
+const scriptPort = require('ut-port-script');
 module.exports = function({namespace, methods}) {
     return (...params) => ({
-        [namespace]: class extends require('ut-port-script')(...params) {
+        [namespace]: class extends scriptPort(...params) {
             get defaults() {
                 return {
                     namespace

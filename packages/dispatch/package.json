@@ -2,6 +2,9 @@
   "name": "ut-function.dispatch",
   "version": "1.0.0",
   "description": "Easily expose backend methods through script port",
+  "dependencies": {
+    "ut-port-script": "^7.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:softwaregroup-bg/ut-function.git"
