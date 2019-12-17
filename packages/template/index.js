@@ -1,8 +1,13 @@
 const vm = require('vm');
 
 const getHandler = escapeMap => {
-    const regExp = new RegExp('([' + Object.keys(escapeMap).join('') + '])', 'g');
-    return str => str.replace(regExp, (str, x) => escapeMap[x]);
+    let handler;
+    if (typeof escapeMap === 'function') handler = escapeMap;
+    else {
+        const regExp = new RegExp('([' + Object.keys(escapeMap).join('') + '])', 'g');
+        handler = str => str.replace(regExp, (str, x) => escapeMap[x]);
+    }
+    return str => handler(String(str));
 };
 
 const getTag = escape => {
@@ -31,7 +36,7 @@ const handlers = {
         '<': '&lt;',
         '\'': '&#39;'
     }),
-    escapeJson: str => JSON.stringify(str).slice(1, -1)
+    escapeJson: getHandler(str => JSON.stringify(str).slice(1, -1))
 };
 
 const tags = {
