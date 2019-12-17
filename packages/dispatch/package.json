@@ -1,0 +1,10 @@
+{
+  "name": "ut-function.dispatch",
+  "version": "1.0.0",
+  "description": "Easily expose backend methods through script port",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}
