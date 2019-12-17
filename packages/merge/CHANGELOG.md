@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.0...ut-function.merge@1.5.0) (2019-12-17)
+
+
+### Features
+
+* unit tests launcher, templates escaping ([#9](https://github.com/softwaregroup-bg/ut-function/issues/9)) ([6a72986](https://github.com/softwaregroup-bg/ut-function/commit/6a72986))
+
+
+
+
+
 # [1.4.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.merge@1.3.0...ut-function.merge@1.4.0) (2019-11-06)
 
 
