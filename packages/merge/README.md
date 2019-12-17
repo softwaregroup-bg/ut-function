@@ -43,7 +43,7 @@ const output = merge(x, y, z);
 */
 ```
 
-For more advanced scenarions `ut-function.merge`
+For more advanced scenarios `ut-function.merge`
 provides an alternative method signature
 
 ```js
@@ -60,7 +60,7 @@ Where
   for Arrays located under different paths. Strategies are defined as
   key value pairs where the key is the path to the array and the
   value is a string representing the merge strategy itself.
-  The merge stratecies currently available are:
+  The merge strategies currently available are:
     * `combine` - will concatenate both arrays and filter repeating elements
     * `override` - will override target with source
     * `default` - will apply lodash.mergeWith default strategy
