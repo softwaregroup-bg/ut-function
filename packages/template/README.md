@@ -39,3 +39,40 @@ time(0);
 // => UTC time: Thu, 01 Jan 1970 00:00:00 GMT
 
 ```
+
+### recursive rendering
+
+The first argument of the template function can be an
+`object` instead of a `string`. In that case the engine
+will iterate through the object recursively and will render each
+`string` value separately treating it as a standalone template.
+
+E.g.
+
+```js
+const result = template(
+  {
+      a: ['${add(10, 20)}'],
+      b: '${subtract(10, 20)}',
+      c: {
+          d: '${multiply(10, 20)}'
+      }
+  },
+  {
+      add: (x, y) => x + y,
+      subtract: (x, y) => x - y,
+      multiply: (x, y) => x * y
+  }
+);
+
+/* result would be:
+{
+  "a": ["30"],
+  "b": "-10",
+  "c": {
+    "d": "200"
+  }
+}
+*/
+
+```

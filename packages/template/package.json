@@ -3,7 +3,8 @@
   "version": "1.5.1",
   "description": "Fast and tiny template engine",
   "devDependencies": {
-    "tap": "^14.6.2"
+    "tap": "^14.6.2",
+    "sort-keys": "2.0.0"
   },
   "repository": {
     "type": "git",
