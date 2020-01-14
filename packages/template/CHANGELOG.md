@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.2...ut-function.template@1.6.0) (2020-01-14)
+
+
+### Features
+
+* recursive templating over objects ([#11](https://github.com/softwaregroup-bg/ut-function/issues/11)) ([483b7e4](https://github.com/softwaregroup-bg/ut-function/commit/483b7e4))
+
+
+
+
+
 ## [1.5.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.dispatch@1.1.0...ut-function.template@1.5.1) (2019-12-17)
 
 

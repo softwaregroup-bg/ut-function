@@ -1,10 +1,10 @@
 {
   "name": "ut-function.template",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Fast and tiny template engine",
   "devDependencies": {
-    "tap": "^14.6.2",
-    "sort-keys": "2.0.0"
+    "sort-keys": "2.0.0",
+    "tap": "^14.6.2"
   },
   "repository": {
     "type": "git",
