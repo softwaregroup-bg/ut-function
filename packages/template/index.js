@@ -1,5 +1,7 @@
 const vm = require('vm');
 
+const isObject = (o, notEmpty) => typeof o === 'object' && o !== null;
+
 const getHandler = escapeMap => {
     let handler;
     if (typeof escapeMap === 'function') handler = escapeMap;
@@ -48,6 +50,13 @@ const tags = {
 module.exports = function template(templateString, templateVariables, ut = {}, escape) {
     Object.assign(ut, handlers, {tags});
     const array = Array.isArray(templateVariables);
+    if (!array && isObject(templateString)) {
+        Object.entries(templateString).forEach(([key, value]) => {
+            if (typeof value === 'string' && value) templateString[key] = template(value, templateVariables, ut, escape);
+            else if (isObject(value)) template(value, templateVariables, ut, escape);
+        });
+        return templateString;
+    }
     const [keys, values] = Object.entries(templateVariables).reduce((prev, cur) => {
         let name = cur[array ? 1 : 0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
         if (!prev[0].includes(name)) { // skip duplicates
