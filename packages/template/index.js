@@ -1,6 +1,6 @@
 const vm = require('vm');
 
-const isObject = (o, notEmpty) => typeof o === 'object' && o !== null;
+const isObject = о => typeof o === 'object' && o !== null;
 
 const getHandler = escapeMap => {
     let handler;
