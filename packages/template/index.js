@@ -45,7 +45,7 @@ const tags = {
     escapeJson: getTag(handlers.escapeJson)
 };
 
-function template(templateString, templateVariables, ut = {}, escape, maxDepth = 100) {
+module.exports = function template(templateString, templateVariables, ut = {}, escape, maxDepth = 100) {
     Object.assign(ut, handlers, {tags});
     const array = Array.isArray(templateVariables);
     if (!array) {
@@ -98,5 +98,3 @@ function template(templateString, templateVariables, ut = {}, escape, maxDepth =
     }
     return array ? (...params) => templateFunction(ut, ...params) : templateFunction(...values);
 };
-
-module.exports = template;
