@@ -1,0 +1,13 @@
+{
+  "name": "ut-function.cbc",
+  "version": "1.0.0",
+  "description": "Cipher block chaining encrypt/decrypt factory function",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "devDependencies": {
+    "tap": "^14.6.2"
+  },
+  "license": "Apache-2.0"
+}
