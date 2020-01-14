@@ -53,6 +53,26 @@ exports[`packages/template/index.test.js TAP render > json template rendering wi
 UTC time: {\\"json\\": \\"Thu, 01 Jan 1970 00:00:00 GMT\\"}
 `
 
+exports[`packages/template/index.test.js TAP render > recursive object values rendering 1`] = `
+Object {
+  "a": Array [
+    "30",
+    "ordinary string",
+  ],
+  "b": "-10",
+  "c": Object {
+    "d": "200",
+    "e": Array [
+      "ordinary string",
+    ],
+    "f": "ordinary string",
+    "g": Object {
+      "h": "ordinary string",
+    },
+  },
+}
+`
+
 exports[`packages/template/index.test.js TAP render > template rendering with variable and function (epoch + 1 second) 1`] = `
 UTC time: Thu, 01 Jan 1970 00:00:01 GMT
 `

@@ -1,5 +1,6 @@
 const tap = require('tap');
 const template = require('./');
+const sortKeys = require('sort-keys');
 
 const format = value => (
     value instanceof Date ? value : new Date(value)
@@ -49,6 +50,24 @@ tap.test('render', assert => {
     assert.matchSnapshot(template('{"a": "${b.c}"}', ['b'], {}, 'json')({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with malicious variable');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"a": "${ut.escapeJson(b.c)}"}', ['b'], {})({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with built-in escape');
+
+    // complex object
+    assert.matchSnapshot(sortKeys(template({
+        a: ['${add(10, 20)}', 'ordinary string'], // eslint-disable-line no-template-curly-in-string
+        b: '${subtract(10, 20)}', // eslint-disable-line no-template-curly-in-string
+        c: {
+            d: '${multiply(10, 20)}', // eslint-disable-line no-template-curly-in-string
+            e: ['ordinary string'],
+            f: 'ordinary string',
+            g: {
+                h: 'ordinary string'
+            }
+        }
+    }, {
+        add: (x, y) => x + y,
+        subtract: (x, y) => x - y,
+        multiply: (x, y) => x * y
+    }), {deep: true}), 'recursive object values rendering');
 
     assert.end();
 });
