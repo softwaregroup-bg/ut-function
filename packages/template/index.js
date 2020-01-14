@@ -1,7 +1,5 @@
 const vm = require('vm');
 
-const isObject = о => typeof o === 'object' && o !== null;
-
 const getHandler = escapeMap => {
     let handler;
     if (typeof escapeMap === 'function') handler = escapeMap;
@@ -47,16 +45,26 @@ const tags = {
     escapeJson: getTag(handlers.escapeJson)
 };
 
-module.exports = function template(templateString, templateVariables, ut = {}, escape) {
+function template(templateString, templateVariables, ut = {}, escape, maxDepth = 100) {
     Object.assign(ut, handlers, {tags});
     const array = Array.isArray(templateVariables);
-    if (!array && isObject(templateString)) {
-        Object.entries(templateString).forEach(([key, value]) => {
-            if (typeof value === 'string' && value) templateString[key] = template(value, templateVariables, ut, escape);
-            else if (isObject(value)) template(value, templateVariables, ut, escape);
-        });
-        return templateString;
+    if (!array) {
+        switch (typeof templateString) {
+            case 'string':
+                break;
+            case 'object':
+                if (templateString !== null) {
+                    if (typeof maxDepth !== 'number' || --maxDepth < 0) throw new Error('max depth reached!');
+                    Object.entries(templateString).forEach(([key, value]) => {
+                        templateString[key] = template(value, templateVariables, ut, escape, maxDepth);
+                    });
+                }
+                return templateString;
+            default:
+                return templateString;
+        }
     }
+
     const [keys, values] = Object.entries(templateVariables).reduce((prev, cur) => {
         let name = cur[array ? 1 : 0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
         if (!prev[0].includes(name)) { // skip duplicates
@@ -90,3 +98,5 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     }
     return array ? (...params) => templateFunction(ut, ...params) : templateFunction(...values);
 };
+
+module.exports = template;
