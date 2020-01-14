@@ -6,6 +6,8 @@ Monorepo of reusable functions.
 request/response recording plugin for [hapi](https://www.npmjs.com/package/@hapi/hapi)
 * [ut-function.capture-request](./packages/capture-request) -
 request/response recording wrapper for [request](https://www.npmjs.com/package/request)
+* [ut-function.cbc](./packages/cbc) - Cipher block chaining
+encrypt/decrypt factory function
 * [ut-function.currency](./packages/currency) - Currency helper functions
 * [ut-function.dispatch](./packages/dispatch) - Easily expose backend methods
   through [script](https://github.com/softwaregroup-bg/ut-port-script) port
