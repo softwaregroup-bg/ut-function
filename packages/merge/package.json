@@ -1,9 +1,9 @@
 {
   "name": "ut-function.merge",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "dependencies": {
     "lodash.mergewith": "4.6.2",
-    "ut-function.equals": "^1.1.0"
+    "ut-function.equals": "^1.1.1"
   },
   "description": "Advanced merge handler",
   "repository": {
