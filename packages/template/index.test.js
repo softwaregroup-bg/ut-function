@@ -14,12 +14,15 @@ const formatHtml = value => `<html>${format(value)}</html>`;
 
 // eslint-disable-next-line no-template-curly-in-string
 const templateString = 'UTC time: ${ut.format(time)}';
+// eslint-disable-next-line no-template-curly-in-string
+const specialChars = '\\u \r \n \t \f "${suffix}';
 
 tap.test('render', assert => {
     assert.matchSnapshot(template(templateString, {time: 0}, {format}), 'immediate template with variable and function (epoch)');
     const time = template(templateString, ['time'], {format});
     assert.matchSnapshot(time(0), 'template rendering with variable and function (epoch)');
     assert.matchSnapshot(time(1000), 'template rendering with variable and function (epoch + 1 second)');
+    assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '{"b'})), 'immediate template with special characters');
 
     // xml
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatXml}, 'xml'), 'immediate xml template with variable and function (epoch)');
@@ -30,6 +33,7 @@ tap.test('render', assert => {
     assert.matchSnapshot(template('<a>${b.c}</a>', ['b'], {}, 'xml')({c: '<d>&"><\'</d>'}), 'xml template rendering with malicious variable');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('<a>${ut.escapeXml(b.c)}</a>', ['b'], {})({c: '<d>&"><\'</d>'}), 'xml template rendering with built-in escape');
+    assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '<d>&"><\'</d>'}, {}, 'xml')), 'immediate xml template with special characters');
 
     // html
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatXml}, 'html'), 'immediate html template with variable and function (epoch)');
@@ -40,6 +44,7 @@ tap.test('render', assert => {
     assert.matchSnapshot(template('<a>${b.c}</a>', ['b'], {}, 'html')({c: '<d>&"><\'</d>'}), 'html template rendering with malicious variable');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('<a>${ut.escapeHtml(b.c)}</a>', ['b'], {})({c: '<d>&"><\'</d>'}), 'html template rendering with built-in escape');
+    assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '<d>&"><\'</d>'}, {}, 'html')), 'immediate html template with special characters');
 
     // json
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatJson}, 'json'), 'immediate json template with variable and function (epoch)');
@@ -50,10 +55,11 @@ tap.test('render', assert => {
     assert.matchSnapshot(template('{"a": "${b.c}"}', ['b'], {}, 'json')({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with malicious variable');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"a": "${ut.escapeJson(b.c)}"}', ['b'], {})({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with built-in escape');
+    assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '{"d": "&\'\n\r\t\b\f'}, {}, 'json')), 'immediate json template with special characters');
 
     // complex object
     assert.matchSnapshot(sortKeys(template({
-        a: ['${add(10, 20)}', 'ordinary string'], // eslint-disable-line no-template-curly-in-string
+        a: ['${add(10, 20)}', 'ordinary string', 123], // eslint-disable-line no-template-curly-in-string
         b: '${subtract(10, 20)}', // eslint-disable-line no-template-curly-in-string
         c: {
             d: '${multiply(10, 20)}', // eslint-disable-line no-template-curly-in-string

@@ -21,6 +21,7 @@ const getTag = escape => {
     };
 };
 
+const stringify = str => JSON.stringify(str).slice(1, -1);
 const handlers = {
     escapeXml: getHandler({
         '&': '&amp;',
@@ -36,7 +37,7 @@ const handlers = {
         '<': '&lt;',
         '\'': '&#39;'
     }),
-    escapeJson: getHandler(str => JSON.stringify(str).slice(1, -1))
+    escapeJson: getHandler(stringify)
 };
 
 const tags = {
@@ -77,16 +78,16 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     let functionBody;
     switch (escape) {
         case 'xml':
-            functionBody = `return ut.tags.escapeXml\`${templateString}\`;`;
+            functionBody = `return ut.tags.escapeXml\`${stringify(templateString)}\`;`;
             break;
         case 'html':
-            functionBody = `return ut.tags.escapeHtml\`${templateString}\`;`;
+            functionBody = `return ut.tags.escapeHtml\`${stringify(templateString)}\`;`;
             break;
         case 'json':
-            functionBody = `return ut.tags.escapeJson\`${templateString}\`;`;
+            functionBody = `return ut.tags.escapeJson\`${stringify(templateString)}\`;`;
             break;
         default:
-            functionBody = `return \`${templateString}\`;`;
+            functionBody = `return \`${stringify(templateString)}\`;`;
             break;
     }
 
