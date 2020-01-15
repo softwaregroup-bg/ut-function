@@ -1,6 +1,6 @@
 {
   "name": "ut-function.template",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Fast and tiny template engine",
   "devDependencies": {
     "sort-keys": "2.0.0",

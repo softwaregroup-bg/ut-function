@@ -1,12 +1,12 @@
 {
   "name": "ut-function.xml2json",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "XML to JSON converter based on template",
   "dependencies": {
     "lodash.get": "4.4.2",
     "lodash.set": "4.3.2",
     "ut-function.flatten": "^1.2.0",
-    "ut-function.template": "^1.6.0",
+    "ut-function.template": "^1.6.1",
     "xml2js": "0.4.22"
   },
   "devDependencies": {

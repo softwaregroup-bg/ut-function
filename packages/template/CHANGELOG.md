@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.cbc@1.1.0...ut-function.template@1.6.1) (2020-01-15)
+
+
+### Bug Fixes
+
+* handle \ and special chars in template ([34d8a9e](https://github.com/softwaregroup-bg/ut-function/commit/34d8a9e))
+
+
+
+
+
 # [1.6.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.2...ut-function.template@1.6.0) (2020-01-14)
 
 
