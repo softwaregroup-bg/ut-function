@@ -2,6 +2,13 @@ const tap = require('tap');
 const interpolate = require('.');
 const cases = [
     {
+        message: 'no interpolation',
+        what: 'x y z',
+        inline: false, // use default true
+        matcher: undefined, // use default /{([^}]+)}/g
+        result: 'x y z'
+    },
+    {
         message: 'inline interpolation',
         what: 'x {y} z',
         inline: undefined, // use default true
@@ -9,6 +16,17 @@ const cases = [
         result: 'x y z',
         params: {
             y: 'y'
+        }
+    },
+    {
+        message: 'inline interpolation',
+        what: 'x {y} {z}',
+        inline: undefined, // use default true
+        matcher: undefined, // use default /{([^}]+)}/g
+        result: 'x 1 {}',
+        params: {
+            y: 1,
+            z: {}
         }
     },
     {
@@ -83,14 +101,16 @@ const cases = [
         message: 'inline object interpolation',
         what: {
             x: {
-                y: 'x {y} z'
+                y: 'x {y} z',
+                z: [0]
             }
         },
         inline: undefined, // use default true
         matcher: undefined, // use default /{([^}]+)}/g
         result: {
             x: {
-                y: 'x y z'
+                y: 'x y z',
+                z: [0]
             }
         },
         params: {
