@@ -2,6 +2,9 @@
   "name": "ut-function.equals",
   "version": "1.1.0",
   "description": "Deep equality comparison between two values",
+  "devDependencies": {
+    "tap": "^14.10.6"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:softwaregroup-bg/ut-function.git"
