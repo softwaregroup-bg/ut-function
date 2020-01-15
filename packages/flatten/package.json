@@ -2,6 +2,10 @@
   "name": "ut-function.flatten",
   "version": "1.2.0",
   "description": "Flatten nested properties",
+  "devDependencies": {
+    "sort-keys": "2.0.0",
+    "tap": "^14.10.6"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:softwaregroup-bg/ut-function.git"
