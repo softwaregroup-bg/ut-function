@@ -80,11 +80,11 @@ Object {
   "c": Object {
     "d": "200",
     "e": Array [
-      "ordinary string",
+      null,
     ],
-    "f": "ordinary string",
+    "f": true,
     "g": Object {
-      "h": "ordinary string",
+      "h": 0,
     },
   },
 }

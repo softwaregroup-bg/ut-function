@@ -57,16 +57,22 @@ tap.test('render', assert => {
     assert.matchSnapshot(template('{"a": "${ut.escapeJson(b.c)}"}', ['b'], {})({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with built-in escape');
     assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '{"d": "&\'\n\r\t\b\f'}, {}, 'json')), 'immediate json template with special characters');
 
+    assert.equal(template(null), null, 'null template');
+
+    assert.equal(template(true), true, 'boolean template');
+
+    assert.throw(() => template({x: {y: {z: true}}}, {}, {}, null, 2), new Error('max depth reached!'));
+
     // complex object
     assert.matchSnapshot(sortKeys(template({
         a: ['${add(10, 20)}', 'ordinary string', 123], // eslint-disable-line no-template-curly-in-string
         b: '${subtract(10, 20)}', // eslint-disable-line no-template-curly-in-string
         c: {
             d: '${multiply(10, 20)}', // eslint-disable-line no-template-curly-in-string
-            e: ['ordinary string'],
-            f: 'ordinary string',
+            e: [null],
+            f: true,
             g: {
-                h: 'ordinary string'
+                h: 0
             }
         }
     }, {
