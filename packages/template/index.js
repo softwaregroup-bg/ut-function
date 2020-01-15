@@ -57,7 +57,13 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
                 if (templateString !== null) {
                     if (typeof maxDepth !== 'number' || --maxDepth < 0) throw new Error('max depth reached!');
                     Object.entries(templateString).forEach(([key, value]) => {
-                        templateString[key] = template(value, templateVariables, ut, escape, maxDepth);
+                        if (typeof value === 'string' && value) {
+                            // recurse and reassign only if not empty string
+                            templateString[key] = template(value, templateVariables, ut, escape, maxDepth);
+                        } else if (typeof value === 'object' && value !== null) {
+                            // recurse only if iterable object. No reassign needed.
+                            template(value, templateVariables, ut, escape, maxDepth);
+                        }
                     });
                 }
                 return templateString;

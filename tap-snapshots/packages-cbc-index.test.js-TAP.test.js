@@ -5,6 +5,18 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`packages/cbc/index.test.js TAP decrypt > decrypt 1`] = `
-test
+exports[`packages/cbc/index.test.js TAP decrypt > decrypt1 buffer 1`] = `
+test1
+`
+
+exports[`packages/cbc/index.test.js TAP decrypt > decrypt1 hex 1`] = `
+test1
+`
+
+exports[`packages/cbc/index.test.js TAP decrypt > decrypt2 buffer 1`] = `
+test2
+`
+
+exports[`packages/cbc/index.test.js TAP decrypt > decrypt2 hex 1`] = `
+test2
 `
