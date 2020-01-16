@@ -1,6 +1,6 @@
 module.exports = function equals(x, y) {
     if (typeof x !== typeof y) return false;
-    if (typeof x === 'object' && x !== null) {
+    if (typeof x === 'object' && x !== null && y !== null) {
         const xProps = Object.getOwnPropertyNames(x);
         const yProps = Object.getOwnPropertyNames(y);
         if (xProps.length !== yProps.length) return false;
