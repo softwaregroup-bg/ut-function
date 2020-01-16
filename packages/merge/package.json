@@ -1,6 +1,9 @@
 {
   "name": "ut-function.merge",
   "version": "1.5.2",
+  "devDependencies": {
+    "tap": "^14.10.6"
+  },
   "dependencies": {
     "lodash.mergewith": "4.6.2",
     "ut-function.equals": "^1.1.2"
