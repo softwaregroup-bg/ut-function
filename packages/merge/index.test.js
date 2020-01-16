@@ -12,4 +12,4 @@ tap.ok(equals(merge({a: 1}, {b: {x: {a: true, z: 'test'}}}), {a: 1, b: {x: {a: t
 tap.ok(equals(merge({a: 1}, {a: 2}), {a: 2}), 'merge objects with same key');
 tap.ok(equals(merge({a: 1}, null), {a: 1}), 'merge object with null');
 tap.ok(equals(merge({a: 1}, undefined), {a: 1}), 'merge object with undefined');
-tap.ok(equals(merge([null], {a: 1}), {a: 1}), 'merge object with undefined');
+tap.ok(equals(merge([null], {a: 1}), {}), 'merge null with wrong options');
