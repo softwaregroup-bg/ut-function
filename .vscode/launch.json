@@ -54,6 +54,31 @@
             "linux": {
                 "protocol": "inspector"
             }
-        }
+        },
+        {
+            "name": "test debug",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/packages/merge/index.test.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--preserve-symlinks",
+                "--nolazy",
+                "--max_old_space_size=500000"
+            ],
+            "env": {
+                "NODE_PATH": "dev"
+            },
+            "console": "externalTerminal",
+            "sourceMaps": false,
+            "outputCapture": "std",
+            "linux": {
+                "protocol": "inspector"
+            }
+        },
     ]
 }

@@ -12,7 +12,7 @@ tap.ok(equals(merge({a: 1}, {b: {x: {y: true, z: 'test'}}}), {a: 1, b: {x: {y: t
 tap.ok(equals(merge({a: 1}, {a: 2}), {a: 2}), 'merge objects with same key');
 tap.ok(equals(merge({a: 1}, null), {a: 1}), 'merge object with null');
 tap.ok(equals(merge({a: 1}, undefined), {a: 1}), 'merge object with undefined');
-tap.ok(equals(merge([null], {a: 1}), {}), 'merge object with null array');
+tap.ok(equals(merge([null], {a: 1}), {}), 'merge null with wrong options');
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {a: 'combine'}}), {a: [1, 2]}), 'merge objects with combine');
 tap.ok(equals(merge([{a: [1]}, {a: 2}], {mergeStrategies: {a: 'combine'}}), {a: 2}), 'merge objects with combine');
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {a: 'override'}}), {a: [2]}), 'merge objects with override');
