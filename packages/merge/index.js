@@ -16,7 +16,7 @@ const mergeHandlers = {
     }
 };
 
-const merge = (objects = [], {
+const merge = (objects, {
     mergeStrategies = {},
     convert = false
 } = {}) => {

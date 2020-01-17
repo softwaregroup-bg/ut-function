@@ -20,7 +20,7 @@ tap.ok(equals(merge([null], undefined), {}), 'merge null with undefined options'
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {a: 'combine'}}), {a: [1, 2]}), 'merge objects with combine');
 tap.ok(equals(merge([{a: [1]}, {a: 2}], {mergeStrategies: {a: 'combine'}}), {a: 2}), 'merge objects with different values with combine');
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {a: 'override'}}), {a: [2]}), 'merge objects with override');
-tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {a: 'default'}}), {a: [2]}), 'merge objects with default');
+tap.ok(equals(merge([{a: [1], b: [2]}, {a: [3], b: [4]}], {mergeStrategies: {a: 'index', b: 'test'}}), {a: [3], b: [4]}), 'merge objects with index');
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {a: true}}), {a: [2]}), 'merge objects with mergeStrategy bool');
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: {}}), {a: [2]}), 'merge objects with mergeStrategy empty obj');
 tap.ok(equals(merge([{a: [1]}, {a: [2]}], {mergeStrategies: []}), {a: [2]}), 'merge objects with mergeStrategy array');
@@ -45,6 +45,7 @@ tap.ok(equals(merge([{}, {a: 2, d: 'undefined'}], {convert: true}), {a: 2, d: 'u
 tap.ok(equals(merge([1, 2, 4], new Set([3, 5])), new Set([3, 5])), 'merge array with Set');
 tap.ok(equals(merge([1, 2], [3, 4], ['a']), ['a', 4]), 'merge more than two');
 tap.ok(equals(merge([[{a: 1}, 2], [3, {b: {c: 'false'}}], ['true']], {convert: true}), [true, {b: {c: false}}]), 'merge more than two');
+tap.ok(equals(merge(undefined), {}), 'merge object with empty array');
 
 // Negative matches
 tap.notOk(equals(merge([1, 2], [3]), [1, 2, 3]), 'return default lodash merge');
