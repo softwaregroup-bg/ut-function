@@ -73,7 +73,6 @@
             "env": {
                 "NODE_PATH": "dev"
             },
-            "console": "externalTerminal",
             "sourceMaps": false,
             "outputCapture": "std",
             "linux": {
