@@ -30,4 +30,5 @@ tap.notOk(equals(false, ''), 'unequal boolean - string');
 tap.notOk(equals(0, ''), 'unequal number - string');
 tap.notOk(equals(null, undefined), 'unequal null - undefined');
 tap.notOk(equals(null, 0), 'unequal null - number');
+tap.notOk(equals({a: null}, null), 'unequal null - number');
 tap.notOk(equals(null, false), 'unequal null - boolean');
