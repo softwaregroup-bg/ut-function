@@ -59,7 +59,7 @@
             "name": "test debug",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/packages/merge/index.test.js",
+            "program": "${workspaceRoot}/packages/${input:test}",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
@@ -78,6 +78,21 @@
             "linux": {
                 "protocol": "inspector"
             }
-        },
-    ]
+        }
+    ],
+    "inputs": [{
+        "id": "test",
+        "type": "pickString",
+        "description": "Pick unit test to run",
+        "options": [
+            "cbc/index.test.js",
+            "equals/index.test.js",
+            "flatten/index.test.js",
+            "includes/index.test.js",
+            "interpolate/index.test.js",
+            "merge/index.test.js",
+            "template/index.test.js",
+            "xml2json/index.test.js"
+        ]
+    }]
 }

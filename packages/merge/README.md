@@ -55,7 +55,9 @@ Where
 * `objects` (required) - an array of objects to be merged
 * `options` (optional) - an object with options
   * `options.convert` - whether to convert strings to
-  boolean, null or number where applicable
+  boolean, null or number where applicable.
+  Note that if a given key appears in the target object only,
+  the conversion will not be applied.
   * `options.mergeStrategies` - whether to apply different merge strategies
   for Arrays located under different paths. Strategies are defined as
   key value pairs where the key is the path to the array and the

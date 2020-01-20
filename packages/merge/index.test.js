@@ -46,6 +46,7 @@ tap.ok(equals(merge([1, 2, 4], new Set([3, 5])), new Set([3, 5])), 'merge array 
 tap.ok(equals(merge([1, 2], [3, 4], ['a']), ['a', 4]), 'merge more than two');
 tap.ok(equals(merge([[{a: 1}, 2], [3, {b: {c: 'false'}}], ['true']], {convert: true}), [true, {b: {c: false}}]), 'merge more than two');
 tap.ok(equals(merge(undefined), {}), 'merge object with empty array');
+tap.ok(equals(merge([{a: 'true'}, {b: 'false'}], {convert: true}), {a: 'true', b: false}), 'convert source and target');
 
 // Negative matches
 tap.notOk(equals(merge([1, 2], [3]), [1, 2, 3]), 'return default lodash merge');
