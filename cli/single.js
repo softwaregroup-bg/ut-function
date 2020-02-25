@@ -16,5 +16,5 @@ inquirer
             fuzzy.filter(input, tests).map(s => ({name: s.string, value: path.resolve(s.original)}))
         )
     })
-    .then(({test}) => childProcess.spawnSync('node', [ tap, test ], {stdio: 'inherit', shell: true}))
+    .then(({test}) => childProcess.spawnSync('node', [tap, test], {stdio: 'inherit', shell: true}))
     .catch(console.error);// eslint-disable-line no-console

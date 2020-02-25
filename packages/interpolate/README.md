@@ -1,18 +1,15 @@
-# ut-funciton.interpolate
+# ut-function.interpolate
 
 function signature:
 
 `interpolate(what, params, inline, matcher)`
 
-    * what [required] - what to be interpolated
-    `string`, `object` or `array`
-    * params [required] - interpolation data source
-    * inline [optional] (default true) - whether the
-    interpolation to be inline or not.
-    E.g. `{x}` with params `{x: true}` will become
-    `"true"` if inline or `true` otherwise
-    * matcher [optional] (default `/{([^}]+)}/g`) - the
-    interpolation matcher
+* `what` [required] - what to be interpolated `string`, `object` or `array`
+* `params` [required] - interpolation data source
+* `inline` [optional] (default true) - whether the interpolation to be inline or
+  not. E.g. `{x}` with params `{x: true}` will become `"true"` if inline or
+  `true` otherwise
+* `matcher` [optional] (default `/{([^}]+)}/g`) - the interpolation matcher
 
 Examples:
 

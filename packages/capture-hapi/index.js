@@ -12,12 +12,12 @@ exports.register = function(server, captureOptions) {
         if (captureOptions && captureOptions.path) {
             fn = path.resolve(captureOptions.path, fn);
         }
-        let req = `### request\r\n${request.raw.req.method} ${request.raw.req.url} HTTP/${request.raw.req.httpVersion}\r\n`;
+        const req = `### request\r\n${request.raw.req.method} ${request.raw.req.url} HTTP/${request.raw.req.httpVersion}\r\n`;
         fs.writeFileSync(fn, req + request.raw.req.rawHeaders.map((h, i) => (i % 2) ? h + '\r\n' : h + ': ').join('') + '\r\n', {flag: 'ax'});
         if (request.payload) fs.writeFileSync(fn, request.payload, {flag: 'a'});
         let headers = true;
         if (Boom.isBoom(request.response)) {
-            let responseHeaders = request.response.output.headers;
+            const responseHeaders = request.response.output.headers;
             headers = false;
             fs.writeFileSync(fn, `\r\n\r\n### response\r\nHTTP/${request.raw.req.httpVersion} ${request.response.output.statusCode}\r\n` +
                 Object.entries(responseHeaders).map(([name, value]) => `${name}: ${value}\r\n`).join('') + '\r\n' +
@@ -30,7 +30,7 @@ exports.register = function(server, captureOptions) {
         } else {
             request.response.events.on('peek', (chunk) => {
                 if (headers) {
-                    let responseHeaders = request.raw.res.getHeaders();
+                    const responseHeaders = request.raw.res.getHeaders();
                     headers = false;
                     fs.writeFileSync(fn, `\r\n\r\n### response\r\nHTTP/${request.raw.req.httpVersion} ${request.response.statusCode}\r\n` +
                         Object.entries(responseHeaders).map(([name, value]) => `${name}: ${value}\r\n`).join('') + '\r\n'

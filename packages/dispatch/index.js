@@ -7,6 +7,7 @@ module.exports = function({namespace, methods}) {
                     namespace
                 };
             }
+
             handlers() {
                 return {
                     [namespace + 'service.get']: () => params[0].utMethod.pkg,

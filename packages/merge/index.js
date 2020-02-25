@@ -62,9 +62,10 @@ const merge = (objects, {
                     return false;
                 case 'null':
                     return null;
-                default:
+                default: {
                     const float = parseFloat(sourceVal);
                     if (!isNaN(float) && (float + '') === sourceVal) return float;
+                }
             }
         }
     });

@@ -2,7 +2,7 @@ const defultMatcher = /{([^}]+)}/g;
 const dotProp = require('dot-prop');
 module.exports = function interpolate(what, params, inline = true, matcher = defultMatcher) {
     switch (typeof what) {
-        case 'string':
+        case 'string': {
             if (inline) {
                 return what.replace(matcher, (placeHolder, label) => {
                     const value = dotProp.get(params, label);
@@ -17,6 +17,7 @@ module.exports = function interpolate(what, params, inline = true, matcher = def
             if (!match || match[0] !== what) return what;
             matcher.lastIndex = 0; // reset matcher as it is stateful
             return dotProp.get(params, match[1], match[0]);
+        }
         case 'object':
             if (Array.isArray(what)) {
                 return what.map(item => interpolate(item, params, inline, matcher));
