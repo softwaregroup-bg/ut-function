@@ -1,6 +1,6 @@
 {
     "name": "ut-function.capture-hapi",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "dependencies": {
         "boom": "7.2.0"
     },

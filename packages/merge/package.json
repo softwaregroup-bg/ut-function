@@ -1,6 +1,6 @@
 {
   "name": "ut-function.merge",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "devDependencies": {
     "tap": "^14.10.6"
   },
