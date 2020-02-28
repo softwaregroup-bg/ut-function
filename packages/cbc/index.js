@@ -10,7 +10,7 @@ module.exports = (key, validate) => {
 
     dec.update(iv);
 
-    const pad = s => s + ' '.repeat(16 - s.length % 16);
+    const pad = s => s + ' '.repeat((16 - s.length % 16) % 16);
 
     return {
         encrypt: value => Buffer.concat([enc.update(crypto.randomFillSync(iv)), enc.update(pad(value))]),
