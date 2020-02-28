@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.7...ut-function.cbc@1.1.4) (2020-02-28)
+
+
+### Bug Fixes
+
+* avoid extra padding ([f8c4f34](https://github.com/softwaregroup-bg/ut-function/commit/f8c4f3482fa47f04de78839c3eef28fd5be56663))
+
+
+
+
+
 ## [1.1.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.merge@1.5.4...ut-function.cbc@1.1.3) (2020-02-25)
 
 
