@@ -16,7 +16,7 @@ module.exports = (xmlTemplate, maxDepth = 50) => {
             Object
                 .entries(flatten(await xmlParser.parseStringPromise(xmlTemplate), maxDepth))
                 .reduce((prev, [name, value]) => {
-                    const path = value.match(/^\${(.*)}$/);
+                    const path = (typeof value.match === 'function') && value.match(/^\${(.*)}$/);
                     if (path) set(prev, path[1], '$' + `{ut.get(xml, '${name}')}`);
                     return prev;
                 }, {})
