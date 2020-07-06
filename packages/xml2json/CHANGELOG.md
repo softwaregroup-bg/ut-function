@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.cbc@1.1.4...ut-function.xml2json@1.1.8) (2020-07-06)
+
+
+### Bug Fixes
+
+* support repeating elements ([9f89935](https://github.com/softwaregroup-bg/ut-function/commit/9f899357416474167f693785d3461b646efeb089))
+
+
+
+
+
 ## [1.1.7](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.merge@1.5.4...ut-function.xml2json@1.1.7) (2020-02-25)
 
 **Note:** Version bump only for package ut-function.xml2json
