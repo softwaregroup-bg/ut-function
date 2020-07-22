@@ -1,6 +1,6 @@
 const scriptPort = require('ut-port-script');
 module.exports = function({namespace, methods}) {
-    let namespaces = namespace;
+    let namespaces = namespace && [].concat(namespace);
     if (!namespaces) {
         methods = arguments[0];
         namespaces = Array.from(
