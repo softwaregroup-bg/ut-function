@@ -1,14 +1,14 @@
 {
   "name": "ut-function.dispatch",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Easily expose backend methods through script port",
   "peerDependencies": {
     "ut-port-script": "^7.0.1"
   },
   "devDependencies": {
+    "tap": "^14.10.8",
     "ut-port-script": "^7.0.1",
     "ut-run": "^10.29.0",
-    "tap": "^14.10.8",
     "why-is-node-running": "^2.1.0"
   },
   "repository": {
