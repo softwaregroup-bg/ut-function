@@ -1,0 +1,14 @@
+{
+  "name": "ut-function.timing",
+  "version": "1.0.0",
+  "description": "Time intervals and high resolution time helpers",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}
