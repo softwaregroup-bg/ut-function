@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Time intervals and high resolution time helpers",
   "dependencies": {
+    "browser-process-hrtime": "1.0.0"
   },
   "devDependencies": {
   },
