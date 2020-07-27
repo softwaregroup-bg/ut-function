@@ -16,5 +16,6 @@ module.exports = {
         return result;
     },
     isAfter: (time, timeout) => Array.isArray(timeout) && ((time[0] > timeout[0]) || (time[0] === timeout[0] && time[1] > timeout[1])),
+    spare: (time, latency) => Math.floor(diff(now(), time)) - (latency || 0),
     now
 };
