@@ -1,6 +1,6 @@
 {
   "name": "ut-function.timing",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Time intervals and high resolution time helpers",
   "dependencies": {
     "browser-process-hrtime": "1.0.0"
