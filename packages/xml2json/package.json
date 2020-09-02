@@ -7,7 +7,8 @@
     "lodash.set": "4.3.2",
     "ut-function.flatten": "^1.2.1",
     "ut-function.template": "^1.6.3",
-    "xml2js": "0.4.22"
+    "xml2js": "0.4.22",
+    "xmldom": "^0.3.0"
   },
   "devDependencies": {
     "sort-keys": "2.0.0",
