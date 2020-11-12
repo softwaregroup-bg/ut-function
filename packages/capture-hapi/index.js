@@ -8,7 +8,8 @@ exports.register = function(server, captureOptions) {
     server.ext('onPreResponse', (request, h) => {
         counter++;
         let fn = Date.now() + '-' + ('0000' + counter).substr(-4) + '.http';
-        if (captureOptions && captureOptions.name) fn = captureOptions.name + '-' + fn;
+        const method = request.headers['x-envoy-decorator-operation'] || request.raw.req.method;
+        if (captureOptions && captureOptions.name) fn = captureOptions.name + (method ? '-' + method.replace('/', '-') : '') + '-' + fn;
         if (captureOptions && captureOptions.path) {
             fn = path.resolve(captureOptions.path, fn);
         }

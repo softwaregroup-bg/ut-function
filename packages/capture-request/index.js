@@ -9,7 +9,7 @@ module.exports = function(request, captureOptions) {
         let fn = Date.now() + '-' + ('0000' + counter).substr(-4) + '.http';
         return request(...arguments).on('response', response => {
             const method = response.request.headers['x-envoy-decorator-operation'] || response.headers['x-envoy-decorator-operation'] || '';
-            fn = method + '-' + Date.now() + '-' + ('0000' + counter).substr(-4) + '.http';
+            fn = method.replace('/', '-') + '-' + Date.now() + '-' + ('0000' + counter).substr(-4) + '.http';
             if (captureOptions && captureOptions.name) fn = captureOptions.name + '-' + fn;
             if (captureOptions && captureOptions.path) {
                 fn = path.resolve(captureOptions.path, fn);
