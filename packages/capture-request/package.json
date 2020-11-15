@@ -1,6 +1,6 @@
 {
     "name": "ut-function.capture-request",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "dependencies": {
         "through2": "2.0.3"
     },
