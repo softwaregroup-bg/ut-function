@@ -16,7 +16,8 @@ module.exports = function interpolate(what, params, inline = true, matcher = def
             const match = matcher.exec(what);
             if (!match || match[0] !== what) return what;
             matcher.lastIndex = 0; // reset matcher as it is stateful
-            return dotProp.get(params, match[1], match[0]);
+            const value = dotProp.get(params, match[1]);
+            return (value == null) ? match[0] : value;
         }
         case 'object':
             if (Array.isArray(what)) {
