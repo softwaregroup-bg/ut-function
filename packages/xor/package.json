@@ -1,0 +1,13 @@
+{
+	"name": "ut-function.xor",
+	"version": "1.0.0",
+	"description": "xor",
+	"devDependencies": {
+		"tap": "^14.10.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:softwaregroup-bg/ut-function.git"
+	},
+	"license": "Apache-2.0"
+}
