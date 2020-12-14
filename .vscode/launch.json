@@ -22,7 +22,7 @@
             "env": {
                 "NODE_PATH": "dev"
             },
-            "console": "externalTerminal",
+            "console": "integratedTerminal",
             "sourceMaps": false,
             "outputCapture": "std",
             "linux": {
@@ -48,7 +48,7 @@
                 "NODE_PATH": "dev",
                 "TAP_SNAPSHOT": "1"
             },
-            "console": "externalTerminal",
+            "console": "integratedTerminal",
             "sourceMaps": false,
             "outputCapture": "std",
             "linux": {
