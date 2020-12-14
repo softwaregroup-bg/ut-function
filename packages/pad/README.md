@@ -33,7 +33,7 @@ unpadString('abcd000000', 'r', '0')
 padString('abcd', 'l', 'F', 10)
 // FFFFFFabcd
 
-unpadString('abcd000000', 'l', 'F')
+unpadString('FFFFFFabcd', 'l', 'F')
 // abcd
 
 ```
