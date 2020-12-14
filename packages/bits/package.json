@@ -1,7 +1,7 @@
 {
-	"name": "ut-function.xor",
+	"name": "ut-function.bits",
 	"version": "1.0.0",
-	"description": "xor",
+	"description": "bits",
 	"devDependencies": {
 		"tap": "^14.10.6"
 	},
