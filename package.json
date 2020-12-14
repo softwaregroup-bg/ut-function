@@ -8,7 +8,7 @@
     "inquirer-autocomplete-prompt": "1.2.0",
     "lerna": "3.16.4",
     "tap": "^14.10.6",
-    "ut-tools": "^6.30.5"
+    "ut-tools": "^6.35.2"
   },
   "scripts": {
     "postinstall": "lerna bootstrap --no-ci",
