@@ -1,6 +1,10 @@
 const {or, xor, and} = require('./');
 const tap = require('tap');
 
+tap.equals(or(), undefined, 'no arguments returns undefined');
+tap.equals(xor(), undefined, 'no arguments returns undefined');
+tap.equals(and(), undefined, 'no arguments returns undefined');
+
 tap.equals(or([
     '11111111111111112222222222222222',
     '33333333333333334444444444444444'
