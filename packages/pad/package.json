@@ -1,0 +1,14 @@
+{
+    "name": "ut-function.pad",
+    "version": "1.2.1",
+    "description": "Pad string",
+    "devDependencies": {
+      "tap": "^14.10.6"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:softwaregroup-bg/ut-function.git"
+    },
+    "license": "Apache-2.0"
+  }
+  
