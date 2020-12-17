@@ -22,7 +22,7 @@
             "env": {
                 "NODE_PATH": "dev"
             },
-            "console": "externalTerminal",
+            "console": "integratedTerminal",
             "sourceMaps": false,
             "outputCapture": "std",
             "linux": {
