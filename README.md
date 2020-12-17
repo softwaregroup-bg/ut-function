@@ -24,3 +24,5 @@ time helpers
 * [ut-function.xml2json](./packages/xml2json) - Practical XML parsing
 string helpers
 * [ut-function.pad](./packages/pad) - String padding functionalities
+bitwise operations
+* [ut-function.bits](./packages/bits) - Bitwise operations
