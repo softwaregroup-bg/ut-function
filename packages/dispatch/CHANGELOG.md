@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.pad@1.3.0...ut-function.dispatch@1.2.1) (2021-03-04)
+
+
+### Bug Fixes
+
+* sanitize port id ([57bdfef](https://github.com/softwaregroup-bg/ut-function/commit/57bdfef232fb76cadc7ac3604cd758e44ee55c22))
+
+
+
+
+
 # [1.2.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.8...ut-function.dispatch@1.2.0) (2020-07-24)
 
 
