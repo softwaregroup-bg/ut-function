@@ -8,8 +8,9 @@ module.exports = function({namespace, methods}) {
                 Object.keys(methods).map(name => name.split('.', 2)[0])));
     };
     if (!namespaces.length) throw new Error('Missing namespace for dispatch');
+    const id = namespaces[0].replace(/[\\/]/g, '-');
     return (...params) => ({
-        [namespaces[0]]: class extends scriptPort(...params) {
+        [id]: class extends scriptPort(...params) {
             get defaults() {
                 return {
                     namespace: namespaces
@@ -26,5 +27,5 @@ module.exports = function({namespace, methods}) {
                 };
             }
         }
-    }[namespaces[0]]);
+    }[id]);
 };
