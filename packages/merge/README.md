@@ -59,13 +59,13 @@ Where
   Note that if a given key appears in the target object only,
   the conversion will not be applied.
   * `options.mergeStrategies` - whether to apply different merge strategies
-  for Arrays located under different paths. Strategies are defined as
+  for Arrays located under the same paths. Strategies are defined as
   key value pairs where the key is the path to the array and the
   value is a string representing the merge strategy itself.
   The merge strategies currently available are:
     * `combine` - will concatenate both arrays and filter repeating elements
     * `override` - will override target with source
-    * `default` - will apply lodash.mergeWith default strategy
+    * `index` - will apply lodash.mergeWith default strategy
 
 Here is how to achieve the same result as with the example above
 based on this alternative signature:
