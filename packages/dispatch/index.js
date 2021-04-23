@@ -1,8 +1,9 @@
 const scriptPort = require('ut-port-script');
-module.exports = function({namespace, methods}) {
+module.exports = function({namespace, methods, imports}) {
     let namespaces = namespace && [].concat(namespace);
     if (!namespaces) {
         methods = arguments[0];
+        imports = arguments[1];
         namespaces = Array.from(
             new Set(
                 Object.keys(methods).map(name => name.split('.', 2)[0])));
@@ -13,7 +14,8 @@ module.exports = function({namespace, methods}) {
         [id]: class extends scriptPort(...params) {
             get defaults() {
                 return {
-                    namespace: namespaces
+                    namespace: namespaces,
+                    imports
                 };
             }
 
