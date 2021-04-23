@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.merge@1.5.6...ut-function.dispatch@1.3.0) (2021-04-23)
+
+
+### Features
+
+* pass imports parameter ([a3342fb](https://github.com/softwaregroup-bg/ut-function/commit/a3342fbc34eff7ec41b8016507afae4c6f1f4c34))
+
+
+
+
+
 ## [1.2.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.pad@1.3.0...ut-function.dispatch@1.2.1) (2021-03-04)
 
 
