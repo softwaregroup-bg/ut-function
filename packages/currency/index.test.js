@@ -1,6 +1,6 @@
 const tap = require('tap');
 
-const {sum} = require('ut-function.currency')({
+const {sum} = require('./index')({
     errors: {
         'currency.invalidCurrency': () => new Error('Invalid currency'),
         'currency.invalidAmount': () => new Error('Invalid amount')
