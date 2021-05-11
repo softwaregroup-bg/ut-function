@@ -691,7 +691,7 @@ const amountObject = (errors) => (cents, scale, sign, currency, string) => {
     result = result.match(/^0*(\d+(\.\d+)?)/); // strip leading zeroes
     return {
         currency: alphabetic(currency),
-        amount: result && result[1],
+        amount: result && ((sign < 0 ? '-' : '') + result[1]),
         scale,
         cents: parseInt(cents) * sign
     };
@@ -733,14 +733,30 @@ module.exports = function currency({errors} = {}) {
     const getScaleIns = getScale(errors);
     const amountObjectIns = amountObject(errors);
 
+    const cents = (currency, cents, sign = 1) => amountObjectIns(cents, getScaleIns(currency), sign, currency, cents);
+    function amount(currency, amount, sign = 1) {
+        const scale = getScaleIns(currency);
+        return amountObjectIns(roundCents(amount, scale), scale, sign, currency, amount);
+    }
+
+    const sum = (currency, amounts) => {
+        const rounded = amounts
+            .map(value => amount(currency, Math.abs(value), Math.sign(value)));
+        const totalCents = rounded
+            .reduce((total, value) => total + value.cents, 0);
+        return [cents(
+            currency,
+            Math.abs(totalCents),
+            Math.sign(totalCents)
+        ).amount, rounded.map(value => value.amount)];
+    };
+
     return {
         numeric: numeric,
         alphabetic: alphabetic,
         scale: getScaleIns,
-        cents: (currency, cents, sign = 1) => amountObjectIns(cents, getScaleIns(currency), sign, currency, cents),
-        amount: function(currency, amount, sign = 1) {
-            const scale = getScaleIns(currency);
-            return amountObjectIns(roundCents(amount, scale), scale, sign, currency, amount);
-        }
+        cents,
+        amount,
+        sum
     };
 };
