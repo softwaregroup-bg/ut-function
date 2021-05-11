@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.dispatch@1.3.0...ut-function.currency@1.1.0) (2021-05-11)
+
+
+### Features
+
+* rounded sum ([ba07280](https://github.com/softwaregroup-bg/ut-function/commit/ba07280ed9c664838a3bd2252d3acd20e5f4a751))
+
+
+
+
+
 ## [1.0.4](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.merge@1.5.4...ut-function.currency@1.0.4) (2020-02-25)
 
 **Note:** Version bump only for package ut-function.currency
