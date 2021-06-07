@@ -26,3 +26,5 @@ string helpers
 * [ut-function.pad](./packages/pad) - String padding functionalities
 bitwise operations
 * [ut-function.bits](./packages/bits) - Bitwise operations
+joi helpers
+* [ut-function.common-joi](./packages/common-joi) - Common joi validations
