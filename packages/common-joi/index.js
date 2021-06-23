@@ -20,7 +20,7 @@ module.exports = ({
     const currencyAmount = joi.object({
         amount: joi.string().required(),
         cents: joi.number().integer().required(),
-        scale: joi.number().integer().valid(0, 2, 3, 4).required(),
+        scale: joi.valid(0, 2, 3, 4).required(),
         currency: joi.string().length(3).required()
     });
 
