@@ -17,8 +17,21 @@ module.exports = ({
         pageSize: integer,
         pagesTotal: integer
     });
+    const currencyAmount = joi.object({
+        amount: joi.string().required(),
+        cents: joi.number().integer().required(),
+        scale: joi.valid(0, 2, 3, 4).required(),
+        currency: joi.string().length(3).required()
+    });
 
     return {
+        currencyAmount,
+        transferAmount: joi.object({
+            acquirerFee: currencyAmount.required(),
+            issuerFee: currencyAmount.required(),
+            processorFee: currencyAmount.required(),
+            transfer: currencyAmount.required()
+        }),
         bigintNotNull: joi.alternatives().try(
             joi.number().integer().required(),
             joi.string().regex(/^[0-9]{1,19}$/, 'numeric').required()
