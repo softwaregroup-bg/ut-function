@@ -34,7 +34,7 @@ module.exports = ({
             transfer: currencyAmount.required()
         }),
         bigintNotNull: bigint,
-        bigintNotNullRequired: bigint.required(),
+        bigintRequired: bigint.required(),
         bigintNull: bigint.allow(null),
         stringNull,
         stringRequired,
