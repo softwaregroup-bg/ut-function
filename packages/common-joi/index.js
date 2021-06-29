@@ -8,9 +8,7 @@ module.exports = ({
     const numberNull = joi.number().allow(null);
     const dateNull = joi.date().allow(null);
     const bool = joi.boolean().falsy(0, '0').truthy(1, '1');
-    const boolRequired = bool.required();
     const integer = joi.number().integer();
-    const integerRequired = integer.required();
     const bigint = joi.alternatives(integer, joi.string().regex(/^[0-9]{1,19}$/, 'numeric'));
     const pagination = joi.object().keys({
         pageNumber: integer,
@@ -43,9 +41,11 @@ module.exports = ({
         dateNull,
         stringNullEmpty,
         bool,
-        boolRequired,
+        boolNull: bool.allow(null),
+        boolRequired: bool.required(),
         integer,
-        integerRequired,
+        integerNull: integer.allow(null),
+        integerRequired: integer.required(),
         pagination
     };
 };
