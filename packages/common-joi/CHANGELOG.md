@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.3.0...ut-function.common-joi@1.4.0) (2021-07-25)
+
+
+### Features
+
+* add orderBy [UTCORE-121] ([f53b46e](https://github.com/softwaregroup-bg/ut-function/commit/f53b46e361aa9ba9e6e445e19c5fc7104faee9c6))
+
+
+
+
+
 # [1.3.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.2.1...ut-function.common-joi@1.3.0) (2021-06-30)
 
 
