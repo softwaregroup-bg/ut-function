@@ -22,6 +22,7 @@ module.exports = ({
         scale: joi.valid(0, 2, 3, 4).required(),
         currency: joi.string().length(3).required()
     });
+    const bigintRequired = bigint.required();
 
     return {
         currencyAmount,
@@ -32,7 +33,7 @@ module.exports = ({
             transfer: currencyAmount.required()
         }),
         bigintNotNull: bigint,
-        bigintRequired: bigint.required(),
+        bigintRequired,
         bigintNull: bigint.allow(null),
         stringNull,
         stringRequired,
@@ -50,6 +51,11 @@ module.exports = ({
         orderBy: joi.array().items(joi.object().keys({
             column: joi.string().min(1).max(128),
             direction: joi.string().valid('ASC', 'DESC')
-        })).optional()
+        })).optional(),
+        dropdownItems: joi.array().items(joi.object({
+            value: joi.alternatives(bigintRequired, stringRequired).required(),
+            label: stringRequired,
+            parent: stringNull
+        }))
     };
 };
