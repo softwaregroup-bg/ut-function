@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.5.0...ut-function.common-joi@1.5.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* prioritize number ([09f8f2f](https://github.com/softwaregroup-bg/ut-function/commit/09f8f2f0892de99b0fed49d0de80bc1d01b96ae2))
+
+
+
+
+
 # [1.5.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.dispatch@1.4.0...ut-function.common-joi@1.5.0) (2021-08-11)
 
 
