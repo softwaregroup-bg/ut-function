@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.dispatch@1.4.0...ut-function.common-joi@1.5.0) (2021-08-11)
+
+
+### Features
+
+* common joi - dropdown items ([#27](https://github.com/softwaregroup-bg/ut-function/issues/27)) ([e46a89b](https://github.com/softwaregroup-bg/ut-function/commit/e46a89b323255938217b27ae213000d5508bea58))
+
+
+
+
+
 # [1.4.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.3.0...ut-function.common-joi@1.4.0) (2021-07-25)
 
 
