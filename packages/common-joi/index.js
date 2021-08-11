@@ -10,6 +10,8 @@ module.exports = ({
     const bool = joi.boolean().falsy(0, '0').truthy(1, '1');
     const integer = joi.number().integer();
     const bigint = joi.alternatives(integer, joi.string().regex(/^[0-9]{1,19}$/, 'numeric'));
+    const bigintRequired = bigint.required();
+    const bigintNull = bigint.allow(null);
     const pagination = joi.object().keys({
         pageNumber: integer,
         recordsTotal: integer,
@@ -32,8 +34,8 @@ module.exports = ({
             transfer: currencyAmount.required()
         }),
         bigintNotNull: bigint,
-        bigintRequired: bigint.required(),
-        bigintNull: bigint.allow(null),
+        bigintRequired,
+        bigintNull,
         stringNull,
         stringRequired,
         numberRequired,
@@ -50,6 +52,11 @@ module.exports = ({
         orderBy: joi.array().items(joi.object().keys({
             column: joi.string().min(1).max(128),
             direction: joi.string().valid('ASC', 'DESC')
-        })).optional()
+        })).optional(),
+        dropdownItems: joi.array().items(joi.object({
+            label: stringRequired,
+            value: joi.alternatives(bigintRequired, stringRequired).required(),
+            parent: joi.alternatives(stringNull, bigintNull).allow(null)
+        }))
     };
 };
