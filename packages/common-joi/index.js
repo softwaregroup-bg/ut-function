@@ -1,3 +1,8 @@
+// @ts-check
+
+/**
+ * @param {{joi: import("joi").Root}} api
+ */
 module.exports = ({
     joi
 }) => {

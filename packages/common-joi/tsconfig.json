@@ -1,0 +1,10 @@
+{
+    "files": ["index.js"],
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "declaration": true,
+        "emitDeclarationOnly": true
+    }
+}

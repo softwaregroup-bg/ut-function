@@ -8,5 +8,8 @@
         "type": "git",
         "url": "git@github.com:softwaregroup-bg/ut-function.git"
     },
+    "scripts": {
+        "tsc": "tsc"
+    },
     "license": "Apache-2.0"
 }
