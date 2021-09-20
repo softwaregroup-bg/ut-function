@@ -54,6 +54,7 @@ module.exports = ({
         integerNull: integer.allow(null),
         integerRequired: integer.required(),
         pagination,
+        paging: pagination,
         orderBy: joi.array().items(joi.object().keys({
             column: joi.string().min(1).max(128),
             direction: joi.string().valid('ASC', 'DESC')
