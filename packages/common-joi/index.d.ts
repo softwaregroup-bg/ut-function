@@ -19,6 +19,7 @@ declare function _exports({ joi }: {
     integerNull: import("joi").NumberSchema;
     integerRequired: import("joi").NumberSchema;
     pagination: import("joi").ObjectSchema<any>;
+    paging: import("joi").ObjectSchema<any>;
     orderBy: import("joi").ArraySchema;
     dropdownItems: import("joi").ArraySchema;
 };
