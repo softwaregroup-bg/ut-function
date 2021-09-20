@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.5.2...ut-function.common-joi@1.6.0) (2021-09-20)
+
+
+### Features
+
+* paging ([28c13f4](https://github.com/softwaregroup-bg/ut-function/commit/28c13f43c927c421ac9ad577508ea829a3358e92))
+
+
+
+
+
 ## [1.5.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.5.1...ut-function.common-joi@1.5.2) (2021-08-29)
 
 **Note:** Version bump only for package ut-function.common-joi
