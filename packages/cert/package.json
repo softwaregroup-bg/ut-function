@@ -1,6 +1,6 @@
 {
 	"name": "ut-function.cert",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "TLS loading helper",
 	"devDependencies": {
 		"tap": "^14.10.6"
