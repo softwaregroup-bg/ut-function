@@ -28,3 +28,4 @@ bitwise operations
 * [ut-function.bits](./packages/bits) - Bitwise operations
 joi helpers
 * [ut-function.common-joi](./packages/common-joi) - Common joi validations
+* [ut-function.cert](./packages/cert) - TLS loading helper

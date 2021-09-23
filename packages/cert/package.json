@@ -1,7 +1,7 @@
 {
 	"name": "ut-function.cert",
 	"version": "1.0.0",
-	"description": "produce object with loaded certificates",
+	"description": "TLS loading helper",
 	"devDependencies": {
 		"tap": "^14.10.6"
 	},

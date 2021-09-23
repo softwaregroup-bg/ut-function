@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function tls(config) {
+module.exports = function cert(config) {
     if (config && config.tls) {
         return {
             minVersion: 'TLSv1.3',
