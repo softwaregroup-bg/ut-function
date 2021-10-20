@@ -474,7 +474,6 @@ const NAME = {
     SCR: 'Seychelles Rupee',
     SLL: 'Leone',
     SGD: 'Singapore Dollar',
-    ANG: 'Netherlands Antillean Guilder',
     XSU: 'Sucre',
     SBD: 'Solomon Islands Dollar',
     SOS: 'Somali Shilling',
@@ -917,10 +916,9 @@ module.exports = function currency({errors} = {}) {
     const getScaleIns = getScale(errors);
     const amountObjectIns = amountObject(errors);
 
-    
     const name = (code) => {
         return NAME[alphabetic(code)];
-    }
+    };
 
     const cents = (currency, cents, sign = 1) => amountObjectIns(cents, getScaleIns(currency), sign, currency, cents);
     function amount(currency, amount, sign = 1) {
