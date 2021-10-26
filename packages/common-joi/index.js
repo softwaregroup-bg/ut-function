@@ -56,8 +56,8 @@ module.exports = ({
         pagination,
         paging: pagination,
         orderBy: joi.array().items(joi.object().keys({
-            column: joi.string().min(1).max(128),
-            direction: joi.string().valid('ASC', 'DESC')
+            field: joi.string().min(1).max(128),
+            dir: joi.string().valid('ASC', 'DESC')
         })).optional(),
         dropdownItems: joi.array().items(joi.object({
             label: stringRequired,
