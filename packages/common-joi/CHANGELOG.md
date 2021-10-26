@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.cert@1.1.0...ut-function.common-joi@1.6.1) (2021-10-26)
+
+
+### Bug Fixes
+
+* orderBy fields ([de3cee8](https://github.com/softwaregroup-bg/ut-function/commit/de3cee89b0a7e99a1aa42ea17b49cafd52b44744))
+
+
+
+
+
 # [1.6.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.5.2...ut-function.common-joi@1.6.0) (2021-09-20)
 
 

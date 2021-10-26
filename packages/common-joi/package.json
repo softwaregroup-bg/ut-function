@@ -1,6 +1,6 @@
 {
     "name": "ut-function.common-joi",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "devDependencies": {
         "tap": "^14.6.2"
     },
