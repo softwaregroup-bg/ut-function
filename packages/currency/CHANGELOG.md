@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.6.1...ut-function.currency@1.2.0) (2021-10-28)
+
+
+### Features
+
+* add currency names ([#30](https://github.com/softwaregroup-bg/ut-function/issues/30)) ([95e3fd2](https://github.com/softwaregroup-bg/ut-function/commit/95e3fd2d6077bbaff3c00b11fbd4648514907b75))
+
+
+
+
+
 # [1.1.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.dispatch@1.3.0...ut-function.currency@1.1.0) (2021-05-11)
 
 
