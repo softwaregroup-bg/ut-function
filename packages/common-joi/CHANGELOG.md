@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.currency@1.2.0...ut-function.common-joi@1.6.2) (2021-12-02)
+
+**Note:** Version bump only for package ut-function.common-joi
+
+
+
+
+
 ## [1.6.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.cert@1.1.0...ut-function.common-joi@1.6.1) (2021-10-26)
 
 
