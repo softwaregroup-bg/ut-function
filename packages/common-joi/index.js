@@ -12,6 +12,7 @@ module.exports = ({
     const numberRequired = joi.number().required();
     const numberNull = joi.number().allow(null);
     const dateNull = joi.date().allow(null);
+    const dateRequired = joi.date().required();
     const bool = joi.boolean().falsy(0, '0').truthy(1, '1');
     const integer = joi.number().integer();
     const bigint = joi.alternatives(integer, joi.string().regex(/^[0-9]{1,19}$/, 'numeric'));
@@ -46,6 +47,7 @@ module.exports = ({
         numberRequired,
         numberNull,
         dateNull,
+        dateRequired,
         stringNullEmpty,
         bool,
         boolNull: bool.allow(null),
