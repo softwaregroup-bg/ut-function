@@ -23,7 +23,7 @@ module.exports = function({namespace, methods, imports, validations}) {
                 return {
                     ...namespaces.reduce((prev, name) => ({
                         ...prev,
-                        [name + 'service.get']: () => params[0].utMethod.pkg
+                        [name + '.service.get']: () => params[0].utMethod.pkg
                     }), {}),
                     ...methods
                 };
