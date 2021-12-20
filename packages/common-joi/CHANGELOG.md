@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.dispatch@1.4.1...ut-function.common-joi@1.7.0) (2021-12-20)
+
+
+### Features
+
+* add dropdown alias ([d6eb4f7](https://github.com/softwaregroup-bg/ut-function/commit/d6eb4f7a16805a5e1955547a73d5e028f7b76a99))
+
+
+
+
+
 ## [1.6.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.currency@1.2.0...ut-function.common-joi@1.6.2) (2021-12-02)
 
 **Note:** Version bump only for package ut-function.common-joi
