@@ -63,6 +63,7 @@ module.exports = ({
         })).optional(),
         dropdownItems: joi.array().items(joi.object({
             label: stringRequired,
+            alias: stringNullEmpty,
             value: joi.alternatives(bigintRequired, stringRequired).required(),
             parent: joi.alternatives(bigintNull, stringNull).allow(null)
         }))
