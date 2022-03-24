@@ -78,6 +78,31 @@
             "linux": {
                 "protocol": "inspector"
             }
+        },
+        {
+            "name": "test single module SNAPSHOT",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/packages/${input:test}",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--preserve-symlinks",
+                "--nolazy",
+                "--max_old_space_size=500000"
+            ],
+            "env": {
+                "NODE_PATH": "dev",
+                "TAP_SNAPSHOT": "1"
+            },
+            "sourceMaps": false,
+            "outputCapture": "std",
+            "linux": {
+                "protocol": "inspector"
+            }
         }
     ],
     "inputs": [{

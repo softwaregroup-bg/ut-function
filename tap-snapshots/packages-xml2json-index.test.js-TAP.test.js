@@ -12,11 +12,14 @@ Object {
     "c": "value 2",
   },
   "d": "undefined",
+  "prop": "prop 1, prop 2",
+  "prop1": "item 1 prop 1, item 2 prop 1",
+  "prop2": "item 1 prop 2",
 }
 `
 
 exports[`packages/xml2json/index.test.js TAP parse > parse xml string to JSON 1`] = `
-{"a":"value 1","b":{"c":"value 2"},"d":"undefined"}
+{"a":"value 1","b":{"c":"value 2"},"d":"undefined","prop":"prop 1, prop 2","prop1":"item 1 prop 1, item 2 prop 1","prop2":"item 1 prop 2, item 2 prop 2"}
 `
 
 exports[`packages/xml2json/index.test.js TAP parse > parse xml string to object 1`] = `
@@ -26,5 +29,8 @@ Object {
     "c": "value 2",
   },
   "d": "undefined",
+  "prop": "prop 1, prop 2",
+  "prop1": "item 1 prop 1, item 2 prop 1",
+  "prop2": "item 1 prop 2, item 2 prop 2",
 }
 `

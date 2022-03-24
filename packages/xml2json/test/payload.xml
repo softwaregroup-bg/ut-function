@@ -8,4 +8,18 @@
     <something>
         <weDoNotCareAbout>value 3</weDoNotCareAbout>
     </something>
+    <props>
+        <prop>prop 1</prop>
+        <prop>prop 2</prop>
+    </props>
+    <items>
+        <item>
+            <prop1>item 1 prop 1</prop1>
+            <prop2>item 1 prop 2</prop2>
+        </item>
+        <item>
+            <prop1>item 2 prop 1</prop1>
+            <prop2>item 2 prop 2</prop2>
+        </item>
+    </items>
 </randomNameSpace:some>
