@@ -14,6 +14,7 @@ encrypt/decrypt factory function
 * [ut-function.equals](./packages/equals) - Deep equality comparison between
 two values
 * [ut-function.flatten](./packages/flatten) - Flatten nested properties
+* [ut-function.iban](./packages/iban) - IBAN functionalities
 * [ut-function.includes](./packages/includes) - Test array of strings
 * [ut-function.interpolate](./packages/interpolate) - Interpolation function
 * [ut-function.merge](./packages/merge) - Advanced merge handler
