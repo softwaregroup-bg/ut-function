@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.iban@1.3.0...ut-function.capture-hapi@1.1.3) (2022-04-13)
+
+
+### Bug Fixes
+
+* dependencies ([2ed8d0a](https://github.com/softwaregroup-bg/ut-function/commit/2ed8d0ace696a18a12e18074ecbc7b9659d583c5))
+
+
+
+
+
 ## [1.1.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.timing@1.2.0...ut-function.capture-hapi@1.1.2) (2020-11-15)
 
 
