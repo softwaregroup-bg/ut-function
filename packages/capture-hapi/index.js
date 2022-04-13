@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 const Http = require('http');
 
 exports.register = function(server, captureOptions) {
