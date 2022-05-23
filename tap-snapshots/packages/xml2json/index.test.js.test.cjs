@@ -11,12 +11,12 @@ Object {
   "b": Object {
     "c": "value 2",
   },
-  "d": "undefined",
+  "d": "",
 }
 `
 
 exports[`packages/xml2json/index.test.js TAP parse > parse xml string to JSON 1`] = `
-{"a":"value 1","b":{"c":"value 2"},"d":"undefined"}
+{"a":"value 1","b":{"c":"value 2"},"d":""}
 `
 
 exports[`packages/xml2json/index.test.js TAP parse > parse xml string to object 1`] = `
@@ -25,6 +25,6 @@ Object {
   "b": Object {
     "c": "value 2",
   },
-  "d": "undefined",
+  "d": "",
 }
 `
