@@ -12,6 +12,6 @@ tap.test('flatten', assert => {
             e: {}
         }
     }, 3)));
-    assert.throw(() => flatten({a: {b: 1}}, 2), new Error('Object exceeds max depth: a.b'));
+    assert.throws(() => flatten({a: {b: 1}}, 2), new Error('Object exceeds max depth: a.b'));
     assert.end();
 });

@@ -1,0 +1,11 @@
+<some>
+    <deep>
+        <nested>
+            <structure>${params.a}</structure>
+        </nested>
+    </deep>
+    <veryVeryLongTagName>${params.b?.c}</veryVeryLongTagName>
+    <potentially>
+        <missing>${params.d ?? ''}</missing>
+    </potentially>
+</some>

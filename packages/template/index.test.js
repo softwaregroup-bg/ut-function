@@ -34,6 +34,8 @@ tap.test('render', assert => {
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('<a>${ut.escapeXml(b.c)}</a>', ['b'], {})({c: '<d>&"><\'</d>'}), 'xml template rendering with built-in escape');
     assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '<d>&"><\'</d>'}, {}, 'xml')), 'immediate xml template with special characters');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('<a>${ut.join(params.list.map(item => ut.xml`\n  <item>${item}</item>`))}\n</a>', ['params'], {}, 'xml')({list: [1, '"2"', '<3>']}), 'xml template with iterator');
 
     // html
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatXml}, 'html'), 'immediate html template with variable and function (epoch)');
@@ -45,6 +47,8 @@ tap.test('render', assert => {
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('<a>${ut.escapeHtml(b.c)}</a>', ['b'], {})({c: '<d>&"><\'</d>'}), 'html template rendering with built-in escape');
     assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '<d>&"><\'</d>'}, {}, 'html')), 'immediate html template with special characters');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('<body>${ut.join(params.list.map(item => ut.html`\n  <div>${item}</div>`))}\n</body>', ['params'], {}, 'html')({list: [1, "'2'", '<3>']}), 'html template with iterator');
 
     // json
     assert.matchSnapshot(template(templateString, {time: 0}, {format: formatJson}, 'json'), 'immediate json template with variable and function (epoch)');
@@ -56,12 +60,14 @@ tap.test('render', assert => {
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"a": "${ut.escapeJson(b.c)}"}', ['b'], {})({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with built-in escape');
     assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '{"d": "&\'\n\r\t\b\f'}, {}, 'json')), 'immediate json template with special characters');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('{"items": [${ut.join(params.list.map(item => ut.json`\n  ${item}`),\',\')}\n]}', ['params'], {}, 'json')({list: [1, '2', [3], {}, null, true, false]}), 'json template with iterator');
 
     assert.equal(template(null), null, 'null template');
 
     assert.equal(template(true), true, 'boolean template');
 
-    assert.throw(() => template({x: {y: {z: true}}}, {}, {}, null, 2), new Error('max depth reached!'));
+    assert.throws(() => template({x: {y: {z: true}}}, {}, {}, null, 2), new Error('max depth reached!'));
 
     // complex object
     assert.matchSnapshot(sortKeys(template({

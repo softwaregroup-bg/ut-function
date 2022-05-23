@@ -20,7 +20,7 @@ module.exports = (xmlTemplate, maxDepth = 50) => {
                     if (path) set(prev, path[1], '$' + `{ut.get(xml, '${name}')}`);
                     return prev;
                 }, {})
-        ), ['xml'], {get}))();
+        ), ['xml'], {get}, 'json'))();
     return async(xml, json) => {
         const result = (await fn)(typeof xml === 'string' ? await xmlParser.parseStringPromise(xml) : await xml);
         return json ? result : JSON.parse(result);

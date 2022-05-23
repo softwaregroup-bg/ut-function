@@ -1,0 +1,11 @@
+<some>
+    <deep>
+        <nested>
+            <structure>${a}</structure>
+        </nested>
+    </deep>
+    <veryVeryLongTagName>${b.c}</veryVeryLongTagName>
+    <potentially>
+        <missing>${d}</missing>
+    </potentially>
+</some>

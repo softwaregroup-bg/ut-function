@@ -7,7 +7,7 @@
     "inquirer": "7.3.3",
     "inquirer-autocomplete-prompt": "1.2.0",
     "lerna": "3.16.4",
-    "tap": "^15.0.9",
+    "tap": "^16.2.0",
     "ut-tools": "^6.39.0"
   },
   "scripts": {

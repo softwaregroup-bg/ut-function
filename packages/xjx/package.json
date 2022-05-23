@@ -1,0 +1,19 @@
+{
+  "name": "ut-function.xjx",
+  "version": "1.1.8",
+  "description": "Load XML to JSON and JSON to XML handlers from a folder",
+  "dependencies": {
+    "ut-function.template": "^1.6.3",
+    "ut-function.xml2json": "^1.1.8",
+    "xml2js": "0.4.22"
+  },
+  "devDependencies": {
+    "sort-keys": "2.0.0",
+    "tap": "^16.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}

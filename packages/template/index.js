@@ -1,13 +1,17 @@
 const vm = require('vm');
+const JOIN = Symbol('join');
 
 const getHandler = escapeMap => {
     let handler;
     if (typeof escapeMap === 'function') handler = escapeMap;
     else {
         const regExp = new RegExp('([' + Object.keys(escapeMap).join('') + '])', 'g');
-        handler = str => str.replace(regExp, (str, x) => escapeMap[x]);
+        handler = str => String(str).replace(regExp, (str, x) => escapeMap[x]);
     }
-    return str => handler(String(str));
+    return str => {
+        const join = str?.[JOIN];
+        return (typeof join === 'string') ? str.join(join) : handler(str);
+    };
 };
 
 const getTag = escape => {
@@ -21,29 +25,41 @@ const getTag = escape => {
     };
 };
 
-const stringify = str => JSON.stringify(str).slice(1, -1);
+const stringify = str => typeof str === 'string' ? JSON.stringify(str).slice(1, -1) : JSON.stringify(str);
+const escapeXml = getHandler({
+    '&': '&amp;',
+    '"': '&quot;',
+    '>': '&gt;',
+    '<': '&lt;',
+    '\'': '&apos;'
+});
+const escapeHtml = getHandler({
+    '&': '&amp;',
+    '"': '&quot;',
+    '>': '&gt;',
+    '<': '&lt;',
+    '\'': '&#39;'
+});
+const escapeJson = getHandler(stringify);
+
 const handlers = {
-    escapeXml: getHandler({
-        '&': '&amp;',
-        '"': '&quot;',
-        '>': '&gt;',
-        '<': '&lt;',
-        '\'': '&apos;'
-    }),
-    escapeHtml: getHandler({
-        '&': '&amp;',
-        '"': '&quot;',
-        '>': '&gt;',
-        '<': '&lt;',
-        '\'': '&#39;'
-    }),
-    escapeJson: getHandler(stringify)
+    escapeHtml,
+    escapeXml,
+    escapeJson,
+    join: (array, string = '') => {
+        array = [].concat(array);
+        array[JOIN] = string;
+        return array;
+    },
+    xml: getTag(escapeXml),
+    html: getTag(escapeHtml),
+    json: getTag(getHandler(JSON.stringify))
 };
 
 const tags = {
-    escapeXml: getTag(handlers.escapeXml),
-    escapeHtml: getTag(handlers.escapeHtml),
-    escapeJson: getTag(handlers.escapeJson)
+    escapeXml: getTag(escapeXml),
+    escapeHtml: getTag(escapeHtml),
+    escapeJson: getTag(escapeJson)
 };
 
 module.exports = function template(templateString, templateVariables, ut = {}, escape, maxDepth = 100) {
