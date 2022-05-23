@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.capture-hapi@1.1.3...ut-function.cbc@1.1.5) (2022-05-23)
+
+**Note:** Version bump only for package ut-function.cbc
+
+
+
+
+
 ## [1.1.4](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.7...ut-function.cbc@1.1.4) (2020-02-28)
 
 
