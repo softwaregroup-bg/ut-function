@@ -7,7 +7,7 @@
     "url": "git@github.com:softwaregroup-bg/ut-function.git"
   },
   "devDependencies": {
-    "tap": "^14.6.2"
+    "tap": "^16.2.0"
   },
   "license": "Apache-2.0"
 }
