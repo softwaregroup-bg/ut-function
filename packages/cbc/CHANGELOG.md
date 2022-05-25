@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.9...ut-function.cbc@1.1.6) (2022-05-25)
+
+
+### Bug Fixes
+
+* cbc utf8 handling #UTCORE-121 ([c86bd4c](https://github.com/softwaregroup-bg/ut-function/commit/c86bd4c0a870b649b5fcb2cf7a5e64f6b5b4d39a)), closes [#UTCORE-121](https://github.com/softwaregroup-bg/ut-function/issues/UTCORE-121)
+
+
+
+
+
 ## [1.1.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.capture-hapi@1.1.3...ut-function.cbc@1.1.5) (2022-05-23)
 
 **Note:** Version bump only for package ut-function.cbc
