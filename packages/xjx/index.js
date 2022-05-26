@@ -12,8 +12,15 @@ module.exports = (vfs, dir) => new Promise((resolve, reject) => {
                 prev[match[1]] = {
                     parse: ({payload}) => xml2json(template)(payload.toString()),
                     render: (params, $meta) => {
-                        $meta.httpResponse = {type: 'application/xml'};
-                        return json2xml(template, ['params'], {}, 'xml')(params);
+                        const result = json2xml(template, ['params'], {}, 'xml')(params);
+                        if ($meta?.mtid === 'error') {
+                            params.response = result;
+                            params.httpResponse = {type: 'application/xml'};
+                            return params;
+                        } else {
+                            if ($meta) $meta.httpResponse = {type: 'application/xml'};
+                            return result;
+                        }
                     }
                 }[match[2]];
             }
