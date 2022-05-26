@@ -86,6 +86,7 @@
         "description": "Pick unit test to run",
         "options": [
             "cbc/index.test.js",
+            "common-joi/index.test.js",
             "equals/index.test.js",
             "flatten/index.test.js",
             "iban/index.test.js",
