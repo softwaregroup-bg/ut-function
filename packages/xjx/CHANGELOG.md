@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.10](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.cbc@1.1.6...ut-function.xjx@1.1.10) (2022-05-26)
+
+
+### Bug Fixes
+
+* error handling #UTCORE-121 ([99b7ec9](https://github.com/softwaregroup-bg/ut-function/commit/99b7ec922904bb96d9a5e9282ae21f5af6a732d3)), closes [#UTCORE-121](https://github.com/softwaregroup-bg/ut-function/issues/UTCORE-121)
+
+
+
+
+
 ## [1.1.9](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.capture-hapi@1.1.3...ut-function.xjx@1.1.9) (2022-05-23)
 
 **Note:** Version bump only for package ut-function.xjx

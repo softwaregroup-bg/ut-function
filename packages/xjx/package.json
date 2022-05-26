@@ -1,6 +1,6 @@
 {
   "name": "ut-function.xjx",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Load XML to JSON and JSON to XML handlers from a folder",
   "dependencies": {
     "ut-function.template": "^1.6.4",
