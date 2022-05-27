@@ -30,6 +30,8 @@ module.exports = ({
         scale: joi.valid(0, 2, 3, 4).required(),
         currency: joi.string().length(3).required()
     });
+    const stringNoSpace = joi.string().pattern(/^\S+$/);
+    const stringTrimmed = joi.string().pattern(/^\S(.*\S)?$/);
 
     return {
         currencyAmount,
@@ -66,6 +68,12 @@ module.exports = ({
             alias: stringNullEmpty,
             value: joi.alternatives(integer, joi.string()).required(),
             parent: joi.alternatives(integer, joi.string()).allow(null)
-        }))
+        })),
+        stringNoSpace,
+        stringNoSpaceRequired: stringNoSpace.required(),
+        stringNoSpaceNull: stringNoSpace.allow(null),
+        stringTrimmed,
+        stringTrimmedRequired: stringTrimmed.required(),
+        stringTrimmedNull: stringTrimmed.allow(null)
     };
 };
