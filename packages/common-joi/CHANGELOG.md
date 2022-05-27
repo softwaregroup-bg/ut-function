@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xjx@1.1.10...ut-function.common-joi@1.7.2) (2022-05-27)
+
+
+### Bug Fixes
+
+* stringTrimmed and stringNoSpace validation schemas ([#35](https://github.com/softwaregroup-bg/ut-function/issues/35)) ([709832a](https://github.com/softwaregroup-bg/ut-function/commit/709832a8434ed877918a5b1bc017d7a645896fd1))
+
+
+
+
+
 ## [1.7.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.0...ut-function.common-joi@1.7.1) (2022-01-17)
 
 

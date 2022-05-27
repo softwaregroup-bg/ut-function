@@ -1,9 +1,9 @@
 {
     "name": "ut-function.common-joi",
-    "version": "1.7.1",
+    "version": "1.7.2",
     "devDependencies": {
-        "tap": "^14.6.2",
-        "joi": "17.4.2"
+        "joi": "17.4.2",
+        "tap": "^14.6.2"
     },
     "repository": {
         "type": "git",
