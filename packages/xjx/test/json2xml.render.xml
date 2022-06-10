@@ -8,4 +8,5 @@
     <potentially>
         <missing>${params.d ?? ''}</missing>
     </potentially>
+    <json><level1><level2>text</level2></level1></json>
 </some>

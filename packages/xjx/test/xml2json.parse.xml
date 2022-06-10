@@ -8,4 +8,5 @@
     <potentially>
         <missing>${d}</missing>
     </potentially>
+    <json>${e}</json>
 </some>

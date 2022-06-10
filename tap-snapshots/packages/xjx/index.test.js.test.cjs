@@ -12,6 +12,7 @@ Object {
     "c": "2",
   },
   "d": "",
+  "e": "{\\"level1\\":{\\"level2\\":\\"text\\"}}",
 }
 `
 
@@ -26,6 +27,7 @@ exports[`packages/xjx/index.test.js TAP parse > render object to xml string 1`] 
     <potentially>
         <missing></missing>
     </potentially>
+    <json><level1><level2>text</level2></level1></json>
 </some>
 
 `

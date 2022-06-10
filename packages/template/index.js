@@ -25,7 +25,12 @@ const getTag = escape => {
     };
 };
 
-const stringify = str => typeof str === 'string' ? JSON.stringify(str).slice(1, -1) : JSON.stringify(str);
+const stringify = str => {
+    let result = JSON.stringify(str) ?? '';
+    if (!result.startsWith('"')) result = JSON.stringify(result);
+    return result.slice(1, -1);
+}
+
 const escapeXml = getHandler({
     '&': '&amp;',
     '"': '&quot;',
