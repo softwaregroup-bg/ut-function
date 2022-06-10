@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.2...ut-function.template@1.6.5) (2022-06-10)
+
+
+### Bug Fixes
+
+* improve JSON escaping ([e5ec5a2](https://github.com/softwaregroup-bg/ut-function/commit/e5ec5a22f7f4e29326b67cf43974c897ac529f5a))
+
+
+
+
+
 ## [1.6.4](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.capture-hapi@1.1.3...ut-function.template@1.6.4) (2022-05-23)
 
 **Note:** Version bump only for package ut-function.template

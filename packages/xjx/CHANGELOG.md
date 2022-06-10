@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.11](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.2...ut-function.xjx@1.1.11) (2022-06-10)
+
+
+### Bug Fixes
+
+* improve JSON escaping ([e5ec5a2](https://github.com/softwaregroup-bg/ut-function/commit/e5ec5a22f7f4e29326b67cf43974c897ac529f5a))
+
+
+
+
+
 ## [1.1.10](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.cbc@1.1.6...ut-function.xjx@1.1.10) (2022-05-26)
 
 
