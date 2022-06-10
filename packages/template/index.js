@@ -26,7 +26,7 @@ const getTag = escape => {
 };
 
 const stringify = str => {
-    let result = JSON.stringify(str) ?? '';
+    let result = JSON.stringify(str) || '';
     if (!result.startsWith('"')) result = JSON.stringify(result);
     return result.slice(1, -1);
 };
