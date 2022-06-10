@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.11](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.10...ut-function.xml2json@1.1.11) (2022-06-10)
+
+**Note:** Version bump only for package ut-function.xml2json
+
+
+
+
+
 ## [1.1.10](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.2...ut-function.xml2json@1.1.10) (2022-06-10)
 
 **Note:** Version bump only for package ut-function.xml2json

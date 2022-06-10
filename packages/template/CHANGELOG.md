@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.6](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.10...ut-function.template@1.6.6) (2022-06-10)
+
+
+### Bug Fixes
+
+* support older node.js ([adc9bd8](https://github.com/softwaregroup-bg/ut-function/commit/adc9bd829b41a427b4aa79897696923c004cac49))
+
+
+
+
+
 ## [1.6.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.2...ut-function.template@1.6.5) (2022-06-10)
 
 
