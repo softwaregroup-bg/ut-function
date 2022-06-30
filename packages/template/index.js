@@ -119,10 +119,16 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     }
 
     let templateFunction;
-    if (vm.compileFunction) {
-        templateFunction = vm.compileFunction(functionBody, keys);
-    } else {
-        templateFunction = new Function(...keys, functionBody); // eslint-disable-line
+    try {
+        if (vm.compileFunction) {
+            templateFunction = vm.compileFunction(functionBody, keys);
+        } else {
+            templateFunction = new Function(...keys, functionBody); // eslint-disable-line
+        }
+    } catch (e) {
+        e.templateString = templateString;
+        throw e;
     }
+
     return array ? (...params) => templateFunction(ut, ...params) : templateFunction(...values);
 };

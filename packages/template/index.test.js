@@ -87,5 +87,7 @@ tap.test('render', assert => {
         multiply: (x, y) => x * y
     }), {deep: true}), 'recursive object values rendering');
 
+    assert.throws(() => template('${', {}), {templateString: '${'}, 'Unexpected end of input');
+
     assert.end();
 });
