@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.7](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.11...ut-function.template@1.6.7) (2022-06-30)
+
+
+### Bug Fixes
+
+* add templateString property in function compilation errors ([bab080f](https://github.com/softwaregroup-bg/ut-function/commit/bab080fe75ffad4f21e25554523a7e8d770e598c))
+
+
+
+
+
 ## [1.6.6](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.10...ut-function.template@1.6.6) (2022-06-10)
 
 
