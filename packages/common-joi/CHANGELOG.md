@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.12...ut-function.common-joi@1.7.3) (2022-07-20)
+
+
+### Bug Fixes
+
+* add description field in dropdownItems schema ([#37](https://github.com/softwaregroup-bg/ut-function/issues/37)) ([26caaff](https://github.com/softwaregroup-bg/ut-function/commit/26caaff92b95eb0690c5cc077eb635637b388ccc))
+
+
+
+
+
 ## [1.7.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xjx@1.1.10...ut-function.common-joi@1.7.2) (2022-05-27)
 
 
