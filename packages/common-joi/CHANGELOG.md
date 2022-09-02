@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.3...ut-function.common-joi@1.7.5) (2022-09-02)
+
+
+### Bug Fixes
+
+* improve TS type generation ([5b61df5](https://github.com/softwaregroup-bg/ut-function/commit/5b61df59102fd74baf07d218c165ded75b68a28b))
+
+
+
+
+
 ## [1.7.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.12...ut-function.common-joi@1.7.3) (2022-07-20)
 
 
