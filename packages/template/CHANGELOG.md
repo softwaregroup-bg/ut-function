@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.5...ut-function.template@1.7.0) (2022-09-07)
+
+
+### Features
+
+* stringify escaper ([df21ccb](https://github.com/softwaregroup-bg/ut-function/commit/df21ccb2865fcb0c9f81668b2edfea27059a52dc))
+
+
+
+
+
 ## [1.6.7](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.11...ut-function.template@1.6.7) (2022-06-30)
 
 
