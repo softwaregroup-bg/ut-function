@@ -62,6 +62,8 @@ tap.test('render', assert => {
     assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '{"d": "&\'\n\r\t\b\f'}, {}, 'json')), 'immediate json template with special characters');
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"items": [${ut.join(params.list.map(item => ut.json`\n  ${item}`),\',\')}\n]}', ['params'], {}, 'json')({list: [1, '2', [3], {}, null, true, false]}), 'json template with iterator');
+    // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('[${params.list[1]}, ${params.list[3]}, ${params.list[0]}]', ['params'], {}, 'stringify')({list: [1, '2', [3], {}, null, true, false]}), 'json stringify');
 
     assert.equal(template(null), null, 'null template');
 

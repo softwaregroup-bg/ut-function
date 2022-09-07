@@ -113,6 +113,9 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
         case 'json':
             functionBody = `return ut.tags.escapeJson\`${stringify(templateString)}\`;`;
             break;
+        case 'stringify':
+            functionBody = `return ut.json\`${stringify(templateString)}\`;`;
+            break;
         default:
             functionBody = `return \`${stringify(templateString)}\`;`;
             break;

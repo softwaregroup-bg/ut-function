@@ -61,6 +61,10 @@ exports[`packages/template/index.test.js TAP render > immediate xml template wit
 UTC time: &lt;xml&gt;Thu, 01 Jan 1970 00:00:00 GMT&lt;/xml&gt;
 `
 
+exports[`packages/template/index.test.js TAP render > json stringify 1`] = `
+["2", {}, 1]
+`
+
 exports[`packages/template/index.test.js TAP render > json template rendering with built-in escape 1`] = `
 {"a": "{\\"d\\": \\"&'\\n\\r\\t\\b\\f\\"}"}
 `
