@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.13...ut-function.template@1.7.1) (2022-09-08)
+
+
+### Bug Fixes
+
+* handle undefined during stringify ([18b53e4](https://github.com/softwaregroup-bg/ut-function/commit/18b53e4a969a9154c124d6e4f61f7029faca3bef))
+
+
+
+
+
 # [1.7.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.5...ut-function.template@1.7.0) (2022-09-07)
 
 
