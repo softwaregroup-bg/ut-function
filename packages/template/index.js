@@ -47,6 +47,8 @@ const escapeHtml = getHandler({
 });
 const escapeJson = getHandler(stringify);
 
+const stringifyUndefined = value => JSON.stringify(value == null ? null : value);
+
 const handlers = {
     escapeHtml,
     escapeXml,
@@ -58,7 +60,7 @@ const handlers = {
     },
     xml: getTag(escapeXml),
     html: getTag(escapeHtml),
-    json: getTag(getHandler(JSON.stringify))
+    json: getTag(getHandler(stringifyUndefined))
 };
 
 const tags = {
