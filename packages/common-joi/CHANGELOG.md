@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.14...ut-function.common-joi@1.8.0) (2022-10-03)
+
+
+### Features
+
+* file validation ([697fa3a](https://github.com/softwaregroup-bg/ut-function/commit/697fa3ac92a7195ed779e689bf7a158b8b88b5fa))
+
+
+
+
+
 ## [1.7.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.7.3...ut-function.common-joi@1.7.5) (2022-09-02)
 
 
