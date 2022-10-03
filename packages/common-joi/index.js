@@ -70,6 +70,11 @@ module.exports = ({
             value: joi.alternatives(integer, joi.string()).required(),
             parent: joi.alternatives(integer, joi.string()).allow(null)
         })),
+        file: joi.object({
+            filename: joi.string(),
+            originalFilename: joi.string(),
+            headers: joi.object()
+        }),
         stringNoSpace,
         stringNoSpaceRequired: stringNoSpace.required(),
         stringNoSpaceNull: stringNoSpace.allow(null),
