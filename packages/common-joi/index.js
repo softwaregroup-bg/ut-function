@@ -1,5 +1,6 @@
 // @ts-check
-
+const xssRegex = /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^/>]?[^>]+|\/[^>][^>]+)>/i;
+const noXss = str => str.pattern(xssRegex, {invert: true, name: 'xss'});
 /**
  * @param {{joi: import("joi").Root}} api
  */
@@ -31,7 +32,11 @@ module.exports = ({
         currency: joi.string().length(3).required()
     });
     const stringNoSpace = joi.string().pattern(/^\S+$/);
+    const stringNoSpaceRequired = stringNoSpace.required();
+    const stringNoSpaceNull = stringNoSpace.allow(null);
     const stringTrimmed = joi.string().pattern(/^\S(.*\S)?$/);
+    const stringTrimmedRequired = stringTrimmed.required();
+    const stringTrimmedNull = stringTrimmed.allow(null);
 
     return {
         currencyAmount,
@@ -45,12 +50,15 @@ module.exports = ({
         bigintRequired,
         bigintNull,
         stringNull,
+        stringNullNoXss: noXss(stringNull),
         stringRequired,
+        stringRequiredNoXss: noXss(stringRequired),
         numberRequired,
         numberNull,
         dateNull,
         dateRequired,
         stringNullEmpty,
+        stringNullEmptyNoXss: noXss(stringNullEmpty),
         bool,
         boolNull: bool.allow(null),
         boolRequired: bool.required(),
@@ -76,10 +84,17 @@ module.exports = ({
             headers: joi.object()
         }),
         stringNoSpace,
-        stringNoSpaceRequired: stringNoSpace.required(),
-        stringNoSpaceNull: stringNoSpace.allow(null),
+        stringNoSpaceNoXss: noXss(stringNoSpace),
+        stringNoSpaceRequired,
+        stringNoSpaceRequiredNoXss: noXss(stringNoSpaceRequired),
+        stringNoSpaceNull,
+        stringNoSpaceNullNoXss: noXss(stringNoSpaceNull),
         stringTrimmed,
-        stringTrimmedRequired: stringTrimmed.required(),
-        stringTrimmedNull: stringTrimmed.allow(null)
+        stringTrimmedNoXss: noXss(stringTrimmed),
+        stringTrimmedRequired,
+        stringTrimmedRequiredNoXss: noXss(stringTrimmedRequired),
+        stringTrimmedNull,
+        stringTrimmedNullNoXss: noXss(stringTrimmedNull),
+        noXss
     };
 };
