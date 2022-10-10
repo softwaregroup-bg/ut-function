@@ -86,15 +86,15 @@ module.exports = ({
         stringNoSpace,
         stringNoSpaceNoXss: noXss(stringNoSpace),
         stringNoSpaceRequired,
-        stringNoSpaceRequiredNoXss: noXss(stringNoSpaceRequired),
+        stringNoSpaceNoXssRequired: noXss(stringNoSpaceRequired),
         stringNoSpaceNull,
-        stringNoSpaceNullNoXss: noXss(stringNoSpaceNull),
+        stringNoSpaceNoXssNull: noXss(stringNoSpaceNull),
         stringTrimmed,
         stringTrimmedNoXss: noXss(stringTrimmed),
         stringTrimmedRequired,
-        stringTrimmedRequiredNoXss: noXss(stringTrimmedRequired),
+        stringTrimmedNoXssRequired: noXss(stringTrimmedRequired),
         stringTrimmedNull,
-        stringTrimmedNullNoXss: noXss(stringTrimmedNull),
+        stringTrimmedNoXssNull: noXss(stringTrimmedNull),
         noXss
     };
 };
