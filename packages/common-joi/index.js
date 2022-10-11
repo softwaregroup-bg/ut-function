@@ -5,12 +5,10 @@ const xssPattern = /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^/>]?[^>]+|\/[^>][^>]+)>
  */
 module.exports = ({
     joi,
-    config: {
-        allowXss = false
-    } = {}
+    config
 }) => {
     const noXss = (str = joi.string()) => str.pattern(xssPattern, {invert: true, name: 'xss'});
-    const string = allowXss ? joi.string() : noXss();
+    const string = config?.noXss ? noXss() : joi.string();
     const stringNull = string.allow(null);
     const stringNullEmpty = string.allow(null, '');
     const stringRequired = string.required().min(1);
