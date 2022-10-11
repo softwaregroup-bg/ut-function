@@ -2,6 +2,10 @@ const tap = require('tap');
 const joi = require('joi');
 const commonJoi = require('.')({joi});
 tap.test('validate', t => {
+    t.doesNotThrow(() => joi.assert('x', commonJoi.string), 'string ok "x"');
+    t.throws(() => joi.assert('<script>x</script>', commonJoi.string), 'string fail "<script>x</script>"');
+    t.throws(() => joi.assert('javascript:SCRIPT', commonJoi.string), 'string fail "javascript:SCRIPT"');
+
     t.doesNotThrow(() => joi.assert(undefined, commonJoi.stringNoSpace), 'stringNoSpace ok undefined');
     t.doesNotThrow(() => joi.assert('xy', commonJoi.stringNoSpace), 'stringNoSpace ok "xy"');
     t.throws(() => joi.assert('x y', commonJoi.stringNoSpace), 'stringNoSpace fail "x y"');

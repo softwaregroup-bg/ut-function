@@ -1,21 +1,23 @@
 // @ts-check
-
+const xssPattern = /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^/>]?[^>]+|\/[^>][^>]+)>/i;
 /**
  * @param {{joi: import("joi").Root}} api
  */
 module.exports = ({
     joi
 }) => {
-    const stringNull = joi.string().allow(null);
-    const stringNullEmpty = joi.string().allow(null, '');
-    const stringRequired = joi.string().required().min(1);
+    const noXss = (str = joi.string()) => str.pattern(xssPattern, {invert: true, name: 'xss'});
+    const string = noXss();
+    const stringNull = string.allow(null);
+    const stringNullEmpty = string.allow(null, '');
+    const stringRequired = string.required().min(1);
     const numberRequired = joi.number().required();
     const numberNull = joi.number().allow(null);
     const dateNull = joi.date().allow(null);
     const dateRequired = joi.date().required();
     const bool = joi.boolean().falsy(0, '0').truthy(1, '1').allow(true, false, 0, 1, '0', '1');
     const integer = joi.number().integer();
-    const bigint = joi.alternatives(integer, joi.string().regex(/^[0-9]{1,19}$/, 'numeric'));
+    const bigint = joi.alternatives(integer, string.regex(/^[0-9]{1,19}$/, 'numeric'));
     const bigintRequired = bigint.required();
     const bigintNull = bigint.allow(null);
     const pagination = joi.object().keys({
@@ -25,15 +27,16 @@ module.exports = ({
         pagesTotal: integer
     });
     const currencyAmount = joi.object({
-        amount: joi.string().required(),
+        amount: stringRequired,
         cents: joi.number().integer().required(),
         scale: joi.valid(0, 2, 3, 4).required(),
-        currency: joi.string().length(3).required()
+        currency: string.length(3).required()
     });
-    const stringNoSpace = joi.string().pattern(/^\S+$/);
-    const stringTrimmed = joi.string().pattern(/^\S(.*\S)?$/);
+    const stringNoSpace = string.pattern(/^\S+$/);
+    const stringTrimmed = string.pattern(/^\S(.*\S)?$/);
 
     return {
+        noXss,
         currencyAmount,
         transferAmount: joi.object({
             acquirerFee: currencyAmount.required(),
@@ -44,6 +47,7 @@ module.exports = ({
         bigintNotNull: bigint,
         bigintRequired,
         bigintNull,
+        string,
         stringNull,
         stringRequired,
         numberRequired,
@@ -60,19 +64,19 @@ module.exports = ({
         pagination,
         paging: pagination,
         orderBy: joi.array().items(joi.object().keys({
-            field: joi.string().min(1).max(128),
+            field: string.min(1).max(128),
             dir: joi.string().valid('ASC', 'DESC')
         })).optional(),
         dropdownItems: joi.array().items(joi.object({
             label: stringRequired,
             alias: stringNullEmpty,
             description: stringNullEmpty,
-            value: joi.alternatives(integer, joi.string()).required(),
-            parent: joi.alternatives(integer, joi.string()).allow(null)
+            value: joi.alternatives(integer, string).required(),
+            parent: joi.alternatives(integer, string).allow(null)
         })),
         file: joi.object({
-            filename: joi.string(),
-            originalFilename: joi.string(),
+            filename: string,
+            originalFilename: string,
             headers: joi.object()
         }),
         stringNoSpace,
