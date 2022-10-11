@@ -6,7 +6,7 @@ const xssPattern = /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^/>]?[^>]+|\/[^>][^>]+)>
 module.exports = ({
     joi,
     config: {
-        allowXss = true
+        allowXss = false
     } = {}
 }) => {
     const noXss = (str = joi.string()) => str.pattern(xssPattern, {invert: true, name: 'xss'});
