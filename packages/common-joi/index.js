@@ -1,14 +1,20 @@
 // @ts-check
-
+const xssPattern = /<[^>]+>|\bjavascript:[^:]/i;
 /**
  * @param {{joi: import("joi").Root}} api
  */
 module.exports = ({
-    joi
+    joi,
+    config
 }) => {
-    const stringNull = joi.string().allow(null);
-    const stringNullEmpty = joi.string().allow(null, '');
-    const stringRequired = joi.string().required().min(1);
+    const noXss = (schema = joi.string(), {
+        pattern = xssPattern,
+        invert = true
+    } = {}) => schema.pattern(pattern, {invert, name: 'xss'});
+    const string = config?.xss ? noXss(joi.string(), config.xss) : joi.string();
+    const stringNull = string.allow(null);
+    const stringNullEmpty = string.allow(null, '');
+    const stringRequired = string.required().min(1);
     const numberRequired = joi.number().required();
     const numberNull = joi.number().allow(null);
     const dateNull = joi.date().allow(null);
@@ -25,15 +31,16 @@ module.exports = ({
         pagesTotal: integer
     });
     const currencyAmount = joi.object({
-        amount: joi.string().required(),
+        amount: stringRequired,
         cents: joi.number().integer().required(),
         scale: joi.valid(0, 2, 3, 4).required(),
-        currency: joi.string().length(3).required()
+        currency: string.length(3).required()
     });
-    const stringNoSpace = joi.string().pattern(/^\S+$/);
-    const stringTrimmed = joi.string().pattern(/^\S(.*\S)?$/);
+    const stringNoSpace = string.pattern(/^\S+$/);
+    const stringTrimmed = string.pattern(/^\S(.*\S)?$/);
 
     return {
+        noXss,
         currencyAmount,
         transferAmount: joi.object({
             acquirerFee: currencyAmount.required(),
@@ -44,6 +51,7 @@ module.exports = ({
         bigintNotNull: bigint,
         bigintRequired,
         bigintNull,
+        string,
         stringNull,
         stringRequired,
         numberRequired,
@@ -60,19 +68,19 @@ module.exports = ({
         pagination,
         paging: pagination,
         orderBy: joi.array().items(joi.object().keys({
-            field: joi.string().min(1).max(128),
+            field: string.min(1).max(128),
             dir: joi.string().valid('ASC', 'DESC')
         })).optional(),
         dropdownItems: joi.array().items(joi.object({
             label: stringRequired,
             alias: stringNullEmpty,
             description: stringNullEmpty,
-            value: joi.alternatives(integer, joi.string()).required(),
-            parent: joi.alternatives(integer, joi.string()).allow(null)
+            value: joi.alternatives(integer, string).required(),
+            parent: joi.alternatives(integer, string).allow(null)
         })),
         file: joi.object({
-            filename: joi.string(),
-            originalFilename: joi.string(),
+            filename: string,
+            originalFilename: string,
             headers: joi.object()
         }),
         stringNoSpace,
