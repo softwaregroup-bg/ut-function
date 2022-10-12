@@ -1,5 +1,5 @@
 // @ts-check
-const xssPattern = /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^/>]?[^>]+|\/[^>][^>]+)>/i;
+const xssPattern = /<[^>]+>|\bjavascript:[^:]/i;
 /**
  * @param {{joi: import("joi").Root}} api
  */
@@ -7,8 +7,11 @@ module.exports = ({
     joi,
     config
 }) => {
-    const noXss = (str = joi.string()) => str.pattern(xssPattern, {invert: true, name: 'xss'});
-    const string = config?.noXss ? noXss() : joi.string();
+    const noXss = (schema = joi.string(), {
+        pattern = xssPattern,
+        invert = true
+    } = {}) => schema.pattern(pattern, {invert, name: 'xss'});
+    const string = config?.xss ? noXss(joi.string(), config.xss) : joi.string();
     const stringNull = string.allow(null);
     const stringNullEmpty = string.allow(null, '');
     const stringRequired = string.required().min(1);
