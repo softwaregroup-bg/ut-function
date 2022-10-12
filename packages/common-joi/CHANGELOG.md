@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.8.0...ut-function.common-joi@1.9.0) (2022-10-12)
+
+
+### Features
+
+* xss prevention for all string schemas ([#39](https://github.com/softwaregroup-bg/ut-function/issues/39)) ([3d5ef00](https://github.com/softwaregroup-bg/ut-function/commit/3d5ef00ffc787878efeda427234fa53ecd44d2d7))
+
+
+
+
+
 # [1.8.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.14...ut-function.common-joi@1.8.0) (2022-10-03)
 
 
