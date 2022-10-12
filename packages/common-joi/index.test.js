@@ -1,12 +1,10 @@
 const tap = require('tap');
 const joi = require('joi');
 const commonJoi = require('.')({joi});
-const commonJoi2 = require('.')({joi, config: {noXss: true}});
+const commonJojXss = require('.')({joi, config: {xss: true}});
 tap.test('validate', t => {
-    t.doesNotThrow(() => joi.assert('<script>x</script>', commonJoi.string), 'string ok "<script>x</script>"');
-    t.doesNotThrow(() => joi.assert('javascript:SCRIPT', commonJoi.string), 'string ok "javascript:SCRIPT"');
-    t.throws(() => joi.assert('<script>x</script>', commonJoi2.string), 'string fail "<script>x</script>"');
-    t.throws(() => joi.assert('javascript:SCRIPT', commonJoi2.string), 'string fail "javascript:SCRIPT"');
+    t.equal(commonJoi.string.validate('<script>x</script>').value, '<script>x</script>', 'input not filtered');
+    t.equal(commonJojXss.string.validate('<script>x</script>').value, '&lt;script&gt;x&lt;/script&gt;', 'input filtered');
 
     t.doesNotThrow(() => joi.assert(undefined, commonJoi.stringNoSpace), 'stringNoSpace ok undefined');
     t.doesNotThrow(() => joi.assert('xy', commonJoi.stringNoSpace), 'stringNoSpace ok "xy"');
