@@ -1,0 +1,13 @@
+{
+  "name": "ut-function.ngram",
+  "version": "1.0.0",
+  "description": "ngram extraction function",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "devDependencies": {
+    "tap": "^16.2.0"
+  },
+  "license": "Apache-2.0"
+}

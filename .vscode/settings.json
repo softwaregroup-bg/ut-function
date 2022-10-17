@@ -1,6 +1,10 @@
 {
     "debug.node.autoAttach": "on",
     "cSpell.words": [
-        "apos"
+        "apos",
+        "bban",
+        "iban",
+        "mergewith",
+        "ngram"
     ]
 }
