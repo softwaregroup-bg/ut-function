@@ -28,6 +28,7 @@ Monorepo of reusable functions.
 
 String helpers
 
+* [ut-function.ngram](./packages/ngram) - ngram extraction
 * [ut-function.pad](./packages/pad) - String padding functionalities
 bitwise operations
 * [ut-function.bits](./packages/bits) - Bitwise operations

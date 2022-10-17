@@ -93,6 +93,7 @@
             "includes/index.test.js",
             "interpolate/index.test.js",
             "merge/index.test.js",
+            "ngram/index.test.js",
             "template/index.test.js",
             "xml2json/index.test.js"
         ]
