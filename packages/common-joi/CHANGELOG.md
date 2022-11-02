@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.ngram@1.1.0...ut-function.common-joi@1.9.1) (2022-11-02)
+
+
+### Bug Fixes
+
+* reduce orderBy field length to (50) in accordance to core.orderByTT field column length ([#42](https://github.com/softwaregroup-bg/ut-function/issues/42)) ([40478f5](https://github.com/softwaregroup-bg/ut-function/commit/40478f5ab04bf3d359ede831c45a1f6261700c4a))
+
+
+
+
+
 # [1.9.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.8.0...ut-function.common-joi@1.9.0) (2022-10-12)
 
 
