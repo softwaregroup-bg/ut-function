@@ -25,5 +25,13 @@ tap.test('validate', t => {
 
     t.doesNotThrow(() => joi.assert(null, commonJoi.stringTrimmedNull), 'stringTrimmedNull ok null');
 
+    t.doesNotThrow(() => joi.assert({field: 'abc', dir: 'ASC'}, commonJoi.orderBy),
+        'orderBy ok {"field": "abc", "dir": "ASC"}'
+    );
+    t.doesNotThrow(() => joi.assert([{field: 'abc', dir: 'ASC'}], commonJoi.orderBy),
+        'orderBy ok [{"field": "abc", "dir": "ASC"}]'
+    );
+    t.doesNotThrow(() => joi.assert(undefined, commonJoi.orderBy), 'orderBy ok undefined');
+
     t.end();
 });

@@ -30,6 +30,10 @@ module.exports = ({
         pageSize: integer,
         pagesTotal: integer
     });
+    const orderBy = joi.object().keys({
+        field: string.min(1).max(50),
+        dir: joi.string().valid('ASC', 'DESC')
+    });
     const currencyAmount = joi.object({
         amount: stringRequired,
         cents: joi.number().integer().required(),
@@ -67,10 +71,7 @@ module.exports = ({
         integerRequired: integer.required(),
         pagination,
         paging: pagination,
-        orderBy: joi.array().items(joi.object().keys({
-            field: string.min(1).max(128),
-            dir: joi.string().valid('ASC', 'DESC')
-        })).optional(),
+        orderBy: joi.alternatives(orderBy, joi.array().items(orderBy)),
         dropdownItems: joi.array().items(joi.object({
             label: stringRequired,
             alias: stringNullEmpty,
