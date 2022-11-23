@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.9.1...ut-function.template@1.7.2) (2022-11-23)
+
+
+### Bug Fixes
+
+* filter reserved words for variable names ([1fe2aa3](https://github.com/softwaregroup-bg/ut-function/commit/1fe2aa3d56cd75846463af745d5ec3e59a788845))
+
+
+
+
+
 ## [1.7.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.13...ut-function.template@1.7.1) (2022-09-08)
 
 
