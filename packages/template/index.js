@@ -1,5 +1,9 @@
 const vm = require('vm');
 const JOIN = Symbol('join');
+const reserved = `await break case catch class const continue debugger default delete do else enum export extends false finally for
+    function if implements import in instanceof interface let new null package private protected public return static super switch
+    this throw true try typeof var void while with yield`.split(/\s+/);
+const isNotReserved = item => !reserved.includes(item);
 
 const getHandler = escapeMap => {
     let handler;
@@ -126,9 +130,9 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     let templateFunction;
     try {
         if (vm.compileFunction) {
-            templateFunction = vm.compileFunction(functionBody, keys);
+            templateFunction = vm.compileFunction(functionBody, keys.filter(isNotReserved));
         } else {
-            templateFunction = new Function(...keys, functionBody); // eslint-disable-line
+            templateFunction = new Function(...keys.filter(isNotReserved), functionBody); // eslint-disable-line
         }
     } catch (e) {
         e.templateString = templateString;
