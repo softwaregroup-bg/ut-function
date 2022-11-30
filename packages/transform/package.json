@@ -1,0 +1,13 @@
+{
+  "name": "ut-function.transform",
+  "version": "1.2.0",
+  "description": "Used to map db result set to json object based on the config object",
+  "devDependencies": {
+    "tap": "^14.10.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "license": "Apache-2.0"
+}
