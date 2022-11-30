@@ -1,0 +1,209 @@
+{
+    "config": {
+        "General Info": {
+            "keys": [{
+                "key": "person,firstName",
+                "title": "First name"
+            }, {
+                "key": "person,lastName",
+                "title": "Last name"
+            }, {
+                "key": "person,nationalId",
+                "title": "National id"
+            }, {
+                "key": "person,gender",
+                "title": "Gender"
+            }, {
+                "key": "userClassification,classificationType",
+                "title": "User Classification"
+            }, {
+                "key": "user,primaryLanguageName",
+                "title": "Language"
+            }, {
+                "key": "person,phoneModel",
+                "title": "Phone model"
+            }, {
+                "key": "person,computerModel",
+                "title": "Computer model"
+            }, {
+                "key": "memberOF,organizationName",
+                "title": "Business Unit"
+            }, {
+                "key": "memberOF,isDefault",
+                "title": "Business Unit Type"
+            }, {
+                "key": "user,isEnabled",
+                "title": "Lock Status"
+            }],
+            "single": true
+        },
+        "Addresses": {
+            "keys": [{
+                "key": "address,addressTypeId",
+                "title": "Type"
+            }, {
+                "key": "address,value",
+                "title": "Address"
+            }],
+            "single": false
+        },
+        "Phone Numbers": {
+            "keys": [{
+                "key": "phone,phoneTypeId",
+                "title": "Type"
+            }, {
+                "key": "phone,phoneNumber",
+                "title": "Number"
+            }, {
+                "key": "phone,mnoKey",
+                "title": "MNO"
+            }, {
+                "key": "phone,isPrimary",
+                "title": "Is Default"
+            }],
+            "single": false
+        },
+        "Email": {
+            "keys": [{
+                "key": "email,emailTypeId",
+                "title": "Type"
+            }, {
+                "key": "email,value",
+                "title": "E-mail"
+            }, {
+                "key": "email,isPrimary",
+                "title": "Is Default"
+            }],
+            "single": false
+        },
+        "Assigned Roles": {
+            "keys": [{
+                "key": "roles,name",
+                "title": "Name"
+            }, {
+                "key": "roles,isDefault",
+                "title": "Is Default"
+            }],
+            "single": false
+        },
+        "Credentials": {
+            "keys": [{
+                "key": "user.hash,identifier",
+                "title": "Set Username"
+            }, {
+                "key": "user,policyId",
+                "title": "Access Policy Status"
+            }, {
+                "key": "user,policyId",
+                "title": "policyId"
+            }, {
+                "key": "policy.basic,name",
+                "title": "Override User Access Policy"
+            }],
+            "single": true
+        },
+        "External Credentials": {
+            "keys": [{
+                "key": "externalSystemCredentials,externalSystemName",
+                "title": "External System"
+            }, {
+                "key": "externalSystemCredentials,userAlias",
+                "title": "User Type"
+            }, {
+                "key": "externalSystemCredentials,userName",
+                "title": "Username"
+            }, {
+                "key": "externalSystemCredentials,isActive",
+                "title": "Active"
+            }]
+        }
+    },
+    "data": {
+        "person": [{
+            "actorId": "1154",
+            "frontEndRecordId": null,
+            "firstName": "User Maker",
+            "lastName": "Admin",
+            "nationalId": null,
+            "dateOfBirth": "1970-01-01T00:00:02.010Z",
+            "placeOfBirth": null,
+            "nationality": null,
+            "gender": "F",
+            "bioId": null,
+            "oldValues": null,
+            "udf": null,
+            "phoneModel": null,
+            "computerModel": null,
+            "maritalStatusId": null,
+            "age": null
+        }],
+        "phone": [],
+        "address": [],
+        "email": [],
+        "memberOF": [{
+            "organizationName": "Software Group",
+            "isDefault": true,
+            "object": "1135"
+        }],
+        "user": [{
+            "primaryLanguageName": null,
+            "policyId": "1",
+            "isApproved": false,
+            "isDeleted": false,
+            "isEnabled": true,
+            "numberFormat": null,
+            "dateFormat": null,
+            "primaryLanguageId": "1",
+            "actorId": "1154"
+        }],
+        "policy.basic": [],
+        "policy.credentials": [],
+        "user.hash": [{
+            "expireDate": "2222-01-01T00:00:00.000Z",
+            "lastChange": "2022-11-29T12:54:45.701Z",
+            "lastAttempt": "2022-11-29T12:54:45.701Z",
+            "failedAttempts": 0,
+            "identifier": "userMakerAdmin",
+            "type": "password",
+            "hashId": "3"
+        }],
+        "externalSystemCredentials": [],
+        "userActorDevice": [],
+        "roles": [{
+            "name": "UserMakerAdmin",
+            "isDefault": true,
+            "object": "1122"
+        }],
+        "userClassification": [],
+        "document": [],
+        "attachment": []
+    },
+    "result": {
+        "General Info": {
+            "First name": "User Maker",
+            "Last name": "Admin",
+            "National id": null,
+            "Gender": "Female",
+            "User Classification": null,
+            "Language": null,
+            "Phone model": null,
+            "Computer model": null,
+            "Business Unit": "Software Group",
+            "Business Unit Type": "Primary",
+            "Lock Status": "Unlocked"
+        },
+        "Addresses": [],
+        "Phone Numbers": [],
+        "Email": [],
+        "Assigned Roles": [{
+            "Name": "UserMakerAdmin",
+            "Is Default": "true"
+        }],
+        "Credentials": {
+            "Set Username": "userMakerAdmin",
+            "Access Policy Status": "Overridden",
+            "policyId": "1"
+        },
+        "External Credentials": []
+    }
+}

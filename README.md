@@ -35,3 +35,4 @@ bitwise operations
 joi helpers
 * [ut-function.common-joi](./packages/common-joi) - Common joi validations
 * [ut-function.cert](./packages/cert) - TLS loading helper
+* [ut-function.transform](./packages/transform) - Map db result to json  based on config
