@@ -101,7 +101,7 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
 
     const [keys, values] = Object.entries(templateVariables).reduce((prev, cur) => {
         const name = cur[array ? 1 : 0].split(/^[^a-zA-Z_$]|[^\w$]/g).join('_');
-        if (!prev[0].includes(name)) { // skip duplicates
+        if (!prev[0].includes(name) && isNotReserved(name)) { // skip duplicates
             prev[0].push(name);
             if (!array) prev[1].push(cur[1]);
         }
@@ -130,14 +130,14 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
     let templateFunction;
     try {
         if (vm.compileFunction) {
-            templateFunction = vm.compileFunction(functionBody, keys.filter(isNotReserved));
+            templateFunction = vm.compileFunction(functionBody, keys);
         } else {
-            templateFunction = new Function(...keys.filter(isNotReserved), functionBody); // eslint-disable-line
+            templateFunction = new Function(...keys, functionBody); // eslint-disable-line
         }
     } catch (e) {
         e.templateString = templateString;
         throw e;
     }
 
-    return array ? (...params) => templateFunction(ut, ...params) : templateFunction(...values);
+    return array ? (...params) => templateFunction(ut, ...params) : templateFunction.apply(templateVariables, values);
 };
