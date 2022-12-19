@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.transform@1.3.0...ut-function.template@1.7.3) (2022-12-19)
+
+
+### Bug Fixes
+
+* filter reserved words ([566f201](https://github.com/softwaregroup-bg/ut-function/commit/566f20114a33e0605fad0dd46bfe554a1ab07850))
+
+
+
+
+
 ## [1.7.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.9.1...ut-function.template@1.7.2) (2022-11-23)
 
 
