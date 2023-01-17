@@ -32,5 +32,8 @@ module.exports = {
             countryCode,
             bban: formatted.slice(4)
         };
+    },
+    ibanCountry(iban) {
+        return !!countries[iban.slice(0, 2)];
     }
 };
