@@ -1,5 +1,5 @@
 const tap = require('tap');
-const {generateIban, parseIban} = require('./');
+const {generateIban, parseIban, ibanCountry} = require('./');
 
 tap.equal(generateIban({bban: 'INGB4937453297', countryCode: 'NL'}), 'NL26INGB4937453297', 'generates valid iban');
 tap.same(parseIban('NL26INGB4937453297'), {
@@ -29,3 +29,7 @@ tap.same(parseIban('TM33INGB49374'), {
     countryCode: 'TM',
     bban: 'INGB49374'
 }, 'parsed result');
+
+tap.same(ibanCountry('NL26INGB4937453297'), true, 'valid IBAN country');
+
+tap.same(ibanCountry('101-123456789'), false, 'invalid IBAN country');
