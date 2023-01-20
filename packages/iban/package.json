@@ -1,6 +1,6 @@
 {
   "name": "ut-function.iban",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "iban",
   "devDependencies": {
     "tap": "^14.10.6"
