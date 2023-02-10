@@ -24,6 +24,12 @@ module.exports = ({
     const bigint = joi.alternatives(integer, joi.string().regex(/^[0-9]{1,19}$/, 'numeric'));
     const bigintRequired = bigint.required();
     const bigintNull = bigint.allow(null);
+    const money = joi.string().max(21).regex(/^[+-]?\d{1,15}(\.\d{0,4})?$/);
+    const moneyRequired = money.required();
+    const moneyNull = money.allow(null);
+    const amount = joi.alternatives(money, joi.number());
+    const amountRequired = amount.required();
+    const amountNull = amount.allow(null);
     const pagination = joi.object().keys({
         pageNumber: integer,
         recordsTotal: integer,
@@ -35,7 +41,7 @@ module.exports = ({
         dir: joi.string().valid('ASC', 'DESC')
     });
     const currencyAmount = joi.object({
-        amount: stringRequired,
+        amount: moneyRequired,
         cents: joi.number().integer().required(),
         scale: joi.valid(0, 2, 3, 4).required(),
         currency: string.length(3).required()
@@ -55,6 +61,12 @@ module.exports = ({
         bigintNotNull: bigint,
         bigintRequired,
         bigintNull,
+        amount,
+        amountRequired,
+        amountNull,
+        money,
+        moneyRequired,
+        moneyNull,
         string,
         stringNull,
         stringRequired,
