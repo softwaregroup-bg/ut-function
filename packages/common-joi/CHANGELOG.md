@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.iban@1.4.0...ut-function.common-joi@1.10.0) (2023-02-10)
+
+
+### Features
+
+* money and amount validations ([f59038a](https://github.com/softwaregroup-bg/ut-function/commit/f59038aeb65d74c135bc083c2d60bef5fa2bbcad))
+
+
+
+
+
 ## [1.9.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.ngram@1.1.0...ut-function.common-joi@1.9.1) (2022-11-02)
 
 
