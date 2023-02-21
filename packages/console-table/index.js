@@ -31,7 +31,7 @@ module.exports = function table(params, {maxWidth = 190, maxColWidth = 20} = {})
         const result = JSON.stringify(value);
         return result.length > length - 3 ? String(value).substring(0, length - 6) + '…' : value;
     };
-    process.stdout.clearLine(0);
+    process.stdout?.clearLine?.(0);
     name && console.log(name); // eslint-disable-line no-console
     console.table(rows.map(row => Object.fromEntries(columns.map(([name, length]) => // eslint-disable-line no-console
         (name in row) && [name, trim(row[name], length)]
