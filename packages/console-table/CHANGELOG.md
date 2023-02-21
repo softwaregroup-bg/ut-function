@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.console-table@1.1.0...ut-function.console-table@1.1.1) (2023-02-21)
+
+
+### Bug Fixes
+
+* improve logging of objects ([8123552](https://github.com/softwaregroup-bg/ut-function/commit/8123552b31a3a8d3e013e8da5f4233179bfa0d67))
+
+
+
+
+
 # [1.1.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.10.0...ut-function.console-table@1.1.0) (2023-02-21)
 
 
