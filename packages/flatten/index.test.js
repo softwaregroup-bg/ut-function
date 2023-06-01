@@ -8,7 +8,9 @@ tap.test('flatten', assert => {
             b: 1
         },
         c: {
-            d() {},
+            d() {
+                //
+            },
             e: {}
         }
     }, 3)));

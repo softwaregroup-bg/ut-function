@@ -20,6 +20,6 @@ module.exports = function includes(where, strings) {
                     return false;
             }
             return strings.includes(where);
-    };
+    }
     return false;
 };

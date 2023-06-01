@@ -12,7 +12,7 @@ module.exports = (data, config, sep = ',') => {
     }
     function getValueByKeys(keys = [], obj) {
         const value = obj[keys.shift()];
-        if (!obj) { return null; };
+        if (!obj) { return null; }
         if (keys.length) {
             return getValueByKeys(keys, value);
         } else {
@@ -51,7 +51,7 @@ module.exports = (data, config, sep = ',') => {
                 });
                 obj.push(iobj);
             });
-        };
+        }
         mappedData[tabKey] = obj;
     }
     return mappedData;

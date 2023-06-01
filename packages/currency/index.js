@@ -939,8 +939,8 @@ module.exports = function currency({errors} = {}) {
     };
 
     return {
-        numeric: numeric,
-        alphabetic: alphabetic,
+        numeric,
+        alphabetic,
         name,
         scale: getScaleIns,
         cents,

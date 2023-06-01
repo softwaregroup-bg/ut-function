@@ -6,7 +6,7 @@ module.exports = function({namespace, methods, imports, validations}) {
         namespaces = Array.from(
             new Set(
                 Object.keys(methods).map(name => name.split('.', 2)[0])));
-    };
+    }
     if (!namespaces.length) throw new Error('Missing namespace for dispatch');
     const id = namespaces[0].replace(/[\\/]/g, '-');
     return (...params) => ({

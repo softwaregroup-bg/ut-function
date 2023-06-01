@@ -25,14 +25,10 @@ Monorepo of reusable functions.
 * [ut-function.xml2json](./packages/xml2json) - Practical XML parsing
 * [ut-function.xjx](./packages/xjx) - Load XML to Object and Object to XML
   handlers from a folder
-
-String helpers
-
 * [ut-function.ngram](./packages/ngram) - ngram extraction
 * [ut-function.pad](./packages/pad) - String padding functionalities
-bitwise operations
 * [ut-function.bits](./packages/bits) - Bitwise operations
-joi helpers
 * [ut-function.common-joi](./packages/common-joi) - Common joi validations
 * [ut-function.cert](./packages/cert) - TLS loading helper
-* [ut-function.transform](./packages/transform) - Map db result to json  based on config
+* [ut-function.transform](./packages/transform) - Map db result to json
+  based on config
