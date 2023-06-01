@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.console-table@1.1.1...ut-function.flatten@1.2.3) (2023-06-01)
+
+**Note:** Version bump only for package ut-function.flatten
+
+
+
+
+
 ## [1.2.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.capture-hapi@1.1.3...ut-function.flatten@1.2.2) (2022-05-23)
 
 **Note:** Version bump only for package ut-function.flatten

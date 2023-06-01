@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.console-table@1.1.1...ut-function.includes@1.2.2) (2023-06-01)
+
+**Note:** Version bump only for package ut-function.includes
+
+
+
+
+
 ## [1.2.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.5...ut-function.includes@1.2.1) (2020-01-15)
 
 **Note:** Version bump only for package ut-function.includes

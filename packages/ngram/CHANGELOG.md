@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.console-table@1.1.1...ut-function.ngram@1.1.1) (2023-06-01)
+
+**Note:** Version bump only for package ut-function.ngram
+
+
+
+
+
 # [1.1.0](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.common-joi@1.9.0...ut-function.ngram@1.1.0) (2022-10-17)
 
 
