@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = function cert(config) {
     if (config && config.tls) {
         return {
-            minVersion: 'TLSv1.3',
+            minVersion: config.tls.minVersion || 'TLSv1.3',
             ...config.tls,
             ...config.tls.ca && {ca: fs.readFileSync(config.tls.ca)},
             ...config.tls.key && {key: fs.readFileSync(config.tls.key)},
