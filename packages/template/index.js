@@ -136,10 +136,14 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
         } else {
             functionBody = functionBody.replace('return ', '');
             const parsed = parse(functionBody).body[0].expression;
-            templateFunction = evaluate(parsed, keys.reduce((memo, key, idx) => {
-                memo[key] = values[idx];
-                return memo;
-            }, {}));
+            templateFunction = function() {
+                const params = keys.reduce((memo, key, idx) => {
+                    memo[key] = values[idx] || arguments[idx];
+                    return memo;
+                }, {});
+                const ut = arguments[0];
+                return evaluate(parsed, {ut, ...params});
+            };
         }
     } catch (e) {
         e.templateString = templateString;
@@ -148,7 +152,5 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
 
     return array
         ? (...params) => templateFunction(ut, ...params)
-        : templateFunction.apply
-            ? templateFunction.apply(templateVariables, values)
-            : templateFunction;
+        : templateFunction.apply(templateVariables, values);
 };
