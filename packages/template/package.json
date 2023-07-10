@@ -10,5 +10,9 @@
     "type": "git",
     "url": "git@github.com:softwaregroup-bg/ut-function.git"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "esprima": "^4.0.1",
+    "static-eval": "^2.1.0"
+  }
 }

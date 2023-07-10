@@ -1,5 +1,7 @@
 const vm = require('vm');
 const JOIN = Symbol('join');
+const evaluate = require('static-eval');
+const parse = require('esprima').parse;
 const reserved = `await break case catch class const continue debugger default delete do else enum export extends false finally for
     function if implements import in instanceof interface let new null package private protected public return static super switch
     this throw true try typeof var void while with yield`.split(/\s+/);
@@ -132,12 +134,21 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
         if (vm.compileFunction) {
             templateFunction = vm.compileFunction(functionBody, keys);
         } else {
-            templateFunction = new Function(...keys, functionBody); // eslint-disable-line
+            functionBody = functionBody.replace('return ', '');
+            const parsed = parse(functionBody).body[0].expression;
+            templateFunction = evaluate(parsed, keys.reduce((memo, key, idx) => {
+                memo[key] = values[idx];
+                return memo;
+            }, {}));
         }
     } catch (e) {
         e.templateString = templateString;
         throw e;
     }
 
-    return array ? (...params) => templateFunction(ut, ...params) : templateFunction.apply(templateVariables, values);
+    return array
+        ? (...params) => templateFunction(ut, ...params)
+        : templateFunction.apply
+            ? templateFunction.apply(templateVariables, values)
+            : templateFunction;
 };
