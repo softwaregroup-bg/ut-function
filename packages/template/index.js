@@ -140,7 +140,7 @@ function template(useParse, templateString, templateVariables, ut = {}, escape, 
             const parsed = parse(functionBody.substring(6)).body[0].expression;
             templateFunction = function() {
                 const params = keys.reduce((memo, key, idx) => {
-                    memo[key] = values[idx] || arguments[idx];
+                    memo[key] = arguments[idx];
                     return memo;
                 }, {});
                 const ut = arguments[0];
