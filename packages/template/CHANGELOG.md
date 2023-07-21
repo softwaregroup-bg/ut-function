@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.4](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.17...ut-function.template@1.7.4) (2023-07-21)
+
+
+### Bug Fixes
+
+* csp compatibility ([#46](https://github.com/softwaregroup-bg/ut-function/issues/46)) ([f599026](https://github.com/softwaregroup-bg/ut-function/commit/f59902604a7acbd226411c56af80ebdfaa492fec))
+
+
+
+
+
 ## [1.7.3](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.transform@1.3.0...ut-function.template@1.7.3) (2022-12-19)
 
 
