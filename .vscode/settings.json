@@ -5,6 +5,7 @@
         "bban",
         "iban",
         "mergewith",
-        "ngram"
+        "ngram",
+        "quasis"
     ]
 }

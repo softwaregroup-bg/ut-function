@@ -1,5 +1,8 @@
 const vm = require('vm');
 const JOIN = Symbol('join');
+let evaluate;
+let parse;
+
 const reserved = `await break case catch class const continue debugger default delete do else enum export extends false finally for
     function if implements import in instanceof interface let new null package private protected public return static super switch
     this throw true try typeof var void while with yield`.split(/\s+/);
@@ -73,7 +76,7 @@ const tags = {
     escapeJson: getTag(escapeJson)
 };
 
-module.exports = function template(templateString, templateVariables, ut = {}, escape, maxDepth = 100) {
+function template(useParse, templateString, templateVariables, ut = {}, escape, maxDepth = 100) {
     Object.assign(ut, handlers, {tags});
     const array = Array.isArray(templateVariables);
     if (!array) {
@@ -86,10 +89,10 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
                     Object.entries(templateString).forEach(([key, value]) => {
                         if (typeof value === 'string' && value) {
                             // recurse and reassign only if not empty string
-                            templateString[key] = template(value, templateVariables, ut, escape, maxDepth);
+                            templateString[key] = template(useParse, value, templateVariables, ut, escape, maxDepth);
                         } else if (typeof value === 'object' && value !== null) {
                             // recurse only if iterable object. No reassign needed.
-                            template(value, templateVariables, ut, escape, maxDepth);
+                            template(useParse, value, templateVariables, ut, escape, maxDepth);
                         }
                     });
                 }
@@ -129,10 +132,20 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
 
     let templateFunction;
     try {
-        if (vm.compileFunction) {
+        if (vm.compileFunction && !useParse) {
             templateFunction = vm.compileFunction(functionBody, keys);
         } else {
-            templateFunction = new Function(...keys, functionBody); // eslint-disable-line
+            evaluate = evaluate || require('./eval');
+            parse = parse || require('esprima').parse;
+            const parsed = parse(functionBody.substring(6)).body[0].expression;
+            templateFunction = function() {
+                const params = keys.reduce((memo, key, idx) => {
+                    memo[key] = arguments[idx];
+                    return memo;
+                }, {});
+                const ut = arguments[0];
+                return evaluate(parsed, {ut, ...params});
+            };
         }
     } catch (e) {
         e.templateString = templateString;
@@ -141,3 +154,6 @@ module.exports = function template(templateString, templateVariables, ut = {}, e
 
     return array ? (...params) => templateFunction(ut, ...params) : templateFunction.apply(templateVariables, values);
 };
+
+module.exports = template.bind(null, false);
+module.exports.evaluate = template.bind(null, true);

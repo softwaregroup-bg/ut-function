@@ -2,6 +2,9 @@
   "name": "ut-function.template",
   "version": "1.7.3",
   "description": "Fast and tiny template engine",
+  "dependencies": {
+    "esprima": "^4.0.1"
+  },
   "devDependencies": {
     "sort-keys": "2.0.0",
     "tap": "^16.2.0"

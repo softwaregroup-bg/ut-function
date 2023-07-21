@@ -1,5 +1,4 @@
 const tap = require('tap');
-const template = require('./');
 const sortKeys = require('sort-keys');
 
 const format = value => (
@@ -17,7 +16,9 @@ const templateString = 'UTC time: ${ut.format(time)}';
 // eslint-disable-next-line no-template-curly-in-string
 const specialChars = '\\u \r \n \t \f "${suffix}';
 
-tap.test('render', assert => {
+const render = evaluate => assert => {
+    const template = evaluate ? require('./').evaluate : require('./');
+
     assert.matchSnapshot(template(templateString, {time: 0}, {format}), 'immediate template with variable and function (epoch)');
     const time = template(templateString, ['time'], {format});
     assert.matchSnapshot(time(0), 'template rendering with variable and function (epoch)');
@@ -92,4 +93,7 @@ tap.test('render', assert => {
     assert.throws(() => template('${', {}), {templateString: '${'}, 'Unexpected end of input');
 
     assert.end();
-});
+};
+
+tap.test('render node', render(false));
+tap.test('render browser', render(true));
