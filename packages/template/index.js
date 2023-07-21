@@ -135,8 +135,8 @@ function template(useParse, templateString, templateVariables, ut = {}, escape, 
         if (vm.compileFunction && !useParse) {
             templateFunction = vm.compileFunction(functionBody, keys);
         } else {
-            evaluate ||= require('./eval');
-            parse ||= require('esprima').parse;
+            evaluate = evaluate || require('./eval');
+            parse = parse || require('esprima').parse;
             const parsed = parse(functionBody.substring(6)).body[0].expression;
             templateFunction = function() {
                 const params = keys.reduce((memo, key, idx) => {
