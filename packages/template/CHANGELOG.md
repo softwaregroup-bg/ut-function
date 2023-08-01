@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.18...ut-function.template@1.7.5) (2023-08-01)
+
+
+### Bug Fixes
+
+* csp optional chaining ([8808044](https://github.com/softwaregroup-bg/ut-function/commit/88080443ca2af82a254c01c2ca4fa6e9e5b7f2d2))
+
+
+
+
+
 ## [1.7.4](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.17...ut-function.template@1.7.4) (2023-07-21)
 
 

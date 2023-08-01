@@ -1,6 +1,6 @@
 {
   "name": "ut-function.template",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "description": "Fast and tiny template engine",
   "dependencies": {
     "acorn": "^8.10.0"
