@@ -91,6 +91,7 @@ module.exports = function evaluate(ast, vars, opts) {
         } else if (node.type === 'CallExpression') {
             const callee = walk(node.callee, noExecute);
             if (callee === FAIL) return FAIL;
+            if (node.optional && callee == null) return undefined;
             if (typeof callee !== 'function') return FAIL;
 
             let ctx = node.callee.object ? walk(node.callee.object, noExecute) : FAIL;
@@ -115,6 +116,7 @@ module.exports = function evaluate(ast, vars, opts) {
             )) {
                 return FAIL;
             }
+            if (node.optional && obj == null) return undefined;
             if (node.property.type === 'Identifier' && !node.computed) {
                 if (isUnsafeProperty(node.property.name)) return FAIL;
                 return obj[node.property.name];
@@ -127,6 +129,8 @@ module.exports = function evaluate(ast, vars, opts) {
             const val = walk(node.test, noExecute);
             if (val === FAIL) return FAIL;
             return val ? walk(node.consequent) : walk(node.alternate, noExecute);
+        } else if (node.type === 'ChainExpression') {
+            return walk(node.expression, noExecute);
         } else if (node.type === 'ExpressionStatement') {
             const val = walk(node.expression, noExecute);
             if (val === FAIL) return FAIL;

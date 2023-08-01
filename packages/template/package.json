@@ -3,7 +3,7 @@
   "version": "1.7.4",
   "description": "Fast and tiny template engine",
   "dependencies": {
-    "esprima": "^4.0.1"
+    "acorn": "^8.10.0"
   },
   "devDependencies": {
     "sort-keys": "2.0.0",

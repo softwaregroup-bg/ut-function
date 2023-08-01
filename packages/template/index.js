@@ -136,8 +136,8 @@ function template(useParse, templateString, templateVariables, ut = {}, escape, 
             templateFunction = vm.compileFunction(functionBody, keys);
         } else {
             evaluate = evaluate || require('./eval');
-            parse = parse || require('esprima').parse;
-            const parsed = parse(functionBody.substring(6)).body[0].expression;
+            parse = parse || require('acorn').parse;
+            const parsed = parse(functionBody.substring(6), {ecmaVersion: 2022}).body[0].expression;
             templateFunction = function() {
                 const params = keys.reduce((memo, key, idx) => {
                     memo[key] = arguments[idx];

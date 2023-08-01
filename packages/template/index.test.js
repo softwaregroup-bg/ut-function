@@ -59,6 +59,8 @@ const render = evaluate => assert => {
     // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"a": "${b.c}"}', ['b'], {}, 'json')({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with malicious variable');
     // eslint-disable-next-line no-template-curly-in-string
+    assert.matchSnapshot(template('{"a": "${b.c?.d}"}', ['b'], {}, 'json')({c: null}), 'json optional chaining');
+    // eslint-disable-next-line no-template-curly-in-string
     assert.matchSnapshot(template('{"a": "${ut.escapeJson(b.c)}"}', ['b'], {})({c: '{"d": "&\'\n\r\t\b\f"}'}), 'json template rendering with built-in escape');
     assert.matchSnapshot(JSON.stringify(template(specialChars, {suffix: '{"d": "&\'\n\r\t\b\f'}, {}, 'json')), 'immediate json template with special characters');
     // eslint-disable-next-line no-template-curly-in-string

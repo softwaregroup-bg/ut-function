@@ -61,6 +61,10 @@ exports[`packages/template/index.test.js TAP render browser > immediate xml temp
 UTC time: &lt;xml&gt;Thu, 01 Jan 1970 00:00:00 GMT&lt;/xml&gt;
 `
 
+exports[`packages/template/index.test.js TAP render browser > json optional chaining 1`] = `
+{"a": ""}
+`
+
 exports[`packages/template/index.test.js TAP render browser > json stringify 1`] = `
 ["2", {}, 1]
 `
@@ -200,6 +204,10 @@ exports[`packages/template/index.test.js TAP render node > immediate xml templat
 
 exports[`packages/template/index.test.js TAP render node > immediate xml template with variable and function (epoch) 1`] = `
 UTC time: &lt;xml&gt;Thu, 01 Jan 1970 00:00:00 GMT&lt;/xml&gt;
+`
+
+exports[`packages/template/index.test.js TAP render node > json optional chaining 1`] = `
+{"a": ""}
 `
 
 exports[`packages/template/index.test.js TAP render node > json stringify 1`] = `

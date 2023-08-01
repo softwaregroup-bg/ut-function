@@ -2,7 +2,16 @@
 
 const test = require('tap').test;
 const evaluate = require('./');
-const parse = require('esprima').parse;
+const acorn = require('acorn');
+
+const parse = src => acorn.parse(src, {ecmaVersion: 2022});
+
+test('optional chaining', async function(t) {
+    const src = '[{a: 1}?.a?.b?.c, {a: {b: 1}}?.a?.b, {a:x=>x}?.b?.(1), {a:x=>x}?.a?.(1)]';
+    const ast = parse(src).body[0].expression;
+    const res = evaluate(ast);
+    t.same(res, [undefined, 1, undefined, 1]);
+});
 
 test('resolved', async function(t) {
     const src = '[1,2,3+4*10+(n||6),foo(3+5),obj[""+"x"].y]';
