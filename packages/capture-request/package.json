@@ -2,7 +2,7 @@
     "name": "ut-function.capture-request",
     "version": "1.1.2",
     "dependencies": {
-        "through2": "2.0.3"
+        "through2": "4.0.2"
     },
     "devDependencies": {
         "tap": "^14.6.2"
