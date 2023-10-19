@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.6](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.capture-request@1.1.3...ut-function.template@1.7.6) (2023-10-19)
+
+**Note:** Version bump only for package ut-function.template
+
+
+
+
+
 ## [1.7.5](https://github.com/softwaregroup-bg/ut-function/compare/ut-function.xml2json@1.1.18...ut-function.template@1.7.5) (2023-08-01)
 
 
