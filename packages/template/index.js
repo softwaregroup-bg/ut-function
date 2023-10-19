@@ -155,5 +155,6 @@ function template(useParse, templateString, templateVariables, ut = {}, escape, 
     return array ? (...params) => templateFunction(ut, ...params) : templateFunction.apply(templateVariables, values);
 };
 
-module.exports = template.bind(null, false);
-module.exports.evaluate = template.bind(null, true);
+const exp = template.bind(null, false);
+exp.evaluate = template.bind(null, true);
+module.exports = exp;
