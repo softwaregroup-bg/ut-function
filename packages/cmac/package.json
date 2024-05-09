@@ -1,0 +1,13 @@
+{
+  "name": "ut-function.cmac",
+  "version": "0.0.1",
+  "description": "CMAC calculation",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:softwaregroup-bg/ut-function.git"
+  },
+  "dependencies": {
+    "node-aes-cmac": "0.1.1"
+  },
+  "license": "Apache-2.0"
+}
