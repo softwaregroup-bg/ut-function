@@ -13,4 +13,3 @@ module.exports = (key, message, type) => {
         throw new Error('Invalid type, should be one of [des3, aes]');
     }
 };
- 
