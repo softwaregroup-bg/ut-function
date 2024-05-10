@@ -6,7 +6,7 @@ module.exports = (key, message, type) => {
         throw new Error('Invalid key length, should be one of [16, 24] bytes');
     }
     if (type === 'des3') {
-        return des3Cmac(key, Buffer.from(message, 'hex')).toString('hex');
+        return des3Cmac(key, Buffer.from(message, 'hex')).toString('hex').toUpperCase();
     } else if (type === 'aes') {
         return aesCmac(key, message);
     } else {
