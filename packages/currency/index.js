@@ -826,6 +826,7 @@ const SCALE = {
     SRD: 2,
     SSP: 2,
     STD: 2,
+    STN: 2,
     SVC: 2,
     SYP: 2,
     SZL: 2,
