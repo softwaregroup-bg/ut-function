@@ -5,6 +5,7 @@ module.exports = function cert(config) {
         return {
             minVersion: 'TLSv1.3',
             ...config.tls,
+            ...config.tls.pfx && {pfx: fs.readFileSync(config.tls.pfx)},
             ...config.tls.ca && {ca: fs.readFileSync(config.tls.ca)},
             ...config.tls.key && {key: fs.readFileSync(config.tls.key)},
             ...config.tls.cert && {cert: fs.readFileSync(config.tls.cert)},
